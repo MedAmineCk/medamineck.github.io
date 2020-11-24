@@ -1,0 +1,86 @@
+@import "./variables";
+@import "./default";
+
+hr {
+  height: 1px;
+  background: whites(0.4);
+  border: none
+}
+
+.titel_label {
+  font-size: 64px;
+  color: whites(0.8);
+  font-family: $Roboto;
+  margin-top: 100px;
+  margin-left: 100px;
+  margin-bottom: 40px;
+  position: relative;
+
+  &::before {
+    content: "About";
+    font-size: 214px;
+    color: whites(0.02);
+    font-weight: bold;
+    position: absolute;
+    bottom: -50px;
+  }
+
+  &.about_tt {
+    &::before {
+      content: "About";
+    }
+  }
+
+  &.works_tt {
+    &::before {
+      content: "Work";
+      left: -28px;
+    }
+  }
+
+  &.testimonial_tt {
+    &::before {
+      content: "T";
+      left: -28px;
+      bottom: -154px;
+      margin-left: -16px;
+    }
+  }
+}
+
+.label {
+  font-family: $Varela;
+  color: whites(0.4);
+  font-weight: 300;
+  font-size: 16px;
+}
+
+aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: -300px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+
+  hr {
+    width: 400px;
+  }
+
+  .label {
+    background: colors(bg);
+    padding: 0 10px;
+    margin: 0 auto;
+    position: absolute;
+  }
+}
+
+.hr_lable {
+  display: flex;
+  align-items: center;
+
+  hr {
+    width: 50px;
+  }
+}

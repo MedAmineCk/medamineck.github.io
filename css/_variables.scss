@@ -1,0 +1,40 @@
+$colors:(full_bg: #1C1D22, bg: #26272D, sec: #4FFFA0, text: rgba(255, 255, 255, 0.8), label: rgba(170, 220, 231, 0.8), p: #880E4F, orange: #FF8A00);
+$whites:(0.8: rgba(255, 255, 255, 0.8), 0.6: rgba(255, 255, 255, 0.6), 0.4: rgba(255, 255, 255, 0.4), 0.2: rgba(255, 255, 255, 0.2), 0.02: rgba(255, 255, 255, 0.02));
+$padding: 10px;
+$border: 1px solid #607D8B;
+$border-radius: 4px;
+$gradient: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #FF8A00 0%, #E52E71 100%);
+$shadow: -4px -4px 12px rgba(217, 217, 217, 0.05),
+4px 4px 12px rgba(0, 0, 0, 0.15);
+$Roboto: 'Roboto',
+sans-serif;
+$Ubuntu: 'Ubuntu',
+sans-serif;
+$Varela: 'Varela Round',
+sans-serif;
+
+@function colors($color-name) {
+  @return map-get($map: $colors, $key: $color-name);
+}
+
+@function whites($color-name) {
+  @return map-get($map: $whites, $key: $color-name);
+}
+
+$tablet: 1134px;
+$mobile: 500px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+//******** Fonts ********//
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@400;700&family=Varela+Round&display=swap');
