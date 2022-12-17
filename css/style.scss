@@ -2,7 +2,8 @@
 @import "./default";
 @import "./module";
 
-@include mobile() {}
+@include mobile() {
+}
 
 body {
   width: 100%;
@@ -36,18 +37,18 @@ body {
     transform: translateX(-50%);
     z-index: 3;
     font-family: $Varela;
-    transition: all linear .4s;
+    transition: all linear 0.4s;
 
     &.fixed {
       $height: 60px;
       height: $height;
-      transition: all linear .4s;
+      transition: all linear 0.4s;
       border-radius: 0 0 $height $height;
-      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.10);
+      box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1);
 
       .logo {
         top: 20px;
-        transition: all linear .4s;
+        transition: all linear 0.4s;
         line-height: 12px;
 
         span {
@@ -66,7 +67,7 @@ body {
         width: $size;
         height: $size;
         top: 35px;
-        transition: all linear .4s;
+        transition: all linear 0.4s;
 
         .item {
           display: none;
@@ -81,7 +82,7 @@ body {
           width: 100%;
           height: 100%;
           font-size: 25px;
-          color: #E91E63;
+          color: #e91e63;
         }
       }
     }
@@ -120,7 +121,7 @@ body {
         margin: 0 20px;
         position: relative;
         color: colors(text);
-        opacity: .6;
+        opacity: 0.6;
 
         &:hover {
           cursor: pointer;
@@ -139,11 +140,11 @@ body {
           }
 
           &::before {
-            content: '<';
+            content: "<";
           }
 
           &::after {
-            content: '/>';
+            content: "/>";
           }
         }
       }
@@ -196,7 +197,6 @@ body {
   }
 
   section {
-
     &.cover {
       $padding_left: 140px;
       background: colors(bg);
@@ -275,31 +275,158 @@ body {
           background-image: url(../img/profile.png);
           background-size: cover;
           background-position: center;
-
-          &::after {
-            content: '';
+          &:after {
+            content: "";
             width: 101%;
             height: 101%;
             background: #000;
             position: absolute;
             top: 50%;
             left: 50%;
+            -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
             border-radius: 50%;
-            background: radial-gradient(50% 50% at 50% 50%, rgba(38, 39, 45, 0.76) 0%, #26272D 100%);
+            background: radial-gradient(50% 50% at 50% 50%, rgba(38, 39, 45, 0.76) 0%, #26272d 100%);
           }
         }
 
         .patern {
-          width: 100%;
-          height: 100%;
-          background-image: url("../img/patern.svg");
-          background-size: cover;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 99;
-          display: block;
+          .icon {
+            $size: 80px;
+            width: $size;
+            height: $size;
+            border-radius: $size;
+            background: #202127;
+            padding: 10px;
+            position: absolute;
+
+            &.tailwind {
+              top: 50%;
+              left: 20%;
+              animation: scale-up-tailwind 5s ease-in-out infinite alternate-reverse both;
+            }
+
+            @keyframes scale-up-tailwind {
+              0% {
+                transform: scale(0.1);
+                background: icons(tailwind);
+              }
+              50% {
+                background: #202127;
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
+
+            &.react {
+              top: 30%;
+              left: 60%;
+              animation: scale-up-react 5s ease-in-out 1s infinite alternate-reverse both;
+            }
+            @keyframes scale-up-react {
+              0% {
+                transform: scale(0.1);
+                background: icons(react);
+              }
+              50% {
+                background: #202127;
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
+
+            &.sass {
+              top: 80%;
+              left: 60%;
+              animation: scale-up-sass 5s ease-in-out 2s infinite alternate-reverse both;
+            }
+            @keyframes scale-up-sass {
+              0% {
+                transform: scale(0.1);
+                background: icons(sass);
+              }
+              50% {
+                background: #202127;
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
+
+            &.php {
+              top: 60%;
+              left: 80%;
+              animation: scale-up-php 5s ease-in-out 3s infinite alternate-reverse both;
+            }
+            @keyframes scale-up-php {
+              0% {
+                transform: scale(0.1);
+                background: icons(php);
+              }
+              50% {
+                background: #202127;
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
+
+            &.mysql {
+              top: 50%;
+              left: 50%;
+              animation: scale-up-mysql 5s ease-in-out 4s infinite alternate-reverse both;
+            }
+            @keyframes scale-up-mysql {
+              0% {
+                transform: scale(0.1);
+                background: icons(mysql);
+              }
+              50% {
+                background: #202127;
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
+
+            &.js {
+              top: 30%;
+              left: 30%;
+              animation: scale-up-js 5s ease-in-out 5s infinite alternate-reverse both;
+            }
+            @keyframes scale-up-js {
+              0% {
+                transform: scale(0.1);
+                background: icons(js);
+              }
+              50% {
+                background: #202127;
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
+
+            &.figma {
+              top: 80%;
+              left: 30%;
+              animation: scale-up-figma 5s ease-in-out 6s infinite alternate-reverse both;
+            }
+            @keyframes scale-up-figma {
+              0% {
+                transform: scale(0.1);
+                background: icons(figma);
+              }
+              50% {
+                background: #202127;
+              }
+              100% {
+                transform: scale(1);
+              }
+            }
+          }
         }
       }
 
@@ -313,17 +440,70 @@ body {
         .exp_years {
           $width: 240px;
           width: $width;
-          background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #FF8A00 0%, #E52E71 100%);
+          background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 100%);
           border-radius: 4px;
           padding: 20px;
           font-family: $Ubuntu;
           position: relative;
 
           .border {
-            border: 2px dashed white;
             height: $height - 10px;
             width: $width - 10px;
             position: absolute;
+            & > div {
+              position: absolute;
+              :nth-child(2n) {
+                animation: light-animation 1s ease-in-out infinite alternate-reverse both;
+              }
+              :nth-child(2n + 1) {
+                animation: light-animation 1s ease-in-out 1s infinite alternate-reverse both;
+              }
+              @keyframes light-animation {
+                0% {
+                  background: #dcdcdc;
+                }
+                100% {
+                  background: #ffffff;
+                  box-shadow: 0px 0px 4px 4px rgba(255, 255, 255, 0.8);
+                }
+              }
+            }
+            .light {
+              $size: 10px;
+              width: $size;
+              height: $size;
+              background: #dcdcdc;
+              border-radius: $size;
+            }
+            .top,
+            .bottom {
+              display: flex;
+              justify-content: space-around;
+              width: 100%;
+            }
+            .right,
+            .left {
+              top: $padding;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              top: 0;
+              padding: 6px 0;
+            }
+            $margin: 6px;
+            .top {
+              top: $margin;
+            }
+            .bottom {
+              bottom: $margin;
+            }
+            .left {
+              left: $margin;
+            }
+            .right {
+              right: $margin;
+            }
           }
 
           .num_years {
@@ -341,7 +521,7 @@ body {
         .exp_projects {
           font-family: $Ubuntu;
           display: flex;
-          color: #67686C;
+          color: #67686c;
           height: $height/2;
           display: flex;
           margin-left: 20px;
@@ -365,7 +545,6 @@ body {
       $bg_color: colors(full_bg);
       background: $bg_color;
 
-
       aside {
         .label {
           background: $bg_color;
@@ -378,7 +557,6 @@ body {
     &.news {
       $bg_color: colors(bg);
       background: $bg_color;
-
 
       aside {
         .label {
@@ -409,7 +587,7 @@ body {
               }
             }
 
-            &>div {
+            & > div {
               display: flex;
               justify-content: space-between;
             }
@@ -438,7 +616,7 @@ body {
             .card_footer {
               a {
                 text-decoration: underline;
-                color: #03A9F4;
+                color: #03a9f4;
               }
             }
           }
@@ -465,7 +643,7 @@ body {
           }
 
           button {
-            background: linear-gradient(90deg, rgba(106, 108, 119, 0) 0%, #2D2E32 48.96%, rgba(106, 108, 119, 0) 100%);
+            background: linear-gradient(90deg, rgba(106, 108, 119, 0) 0%, #2d2e32 48.96%, rgba(106, 108, 119, 0) 100%);
             color: whites(0.6);
             padding: 10px 25px;
             float: right;
@@ -520,12 +698,12 @@ body {
         }
 
         &.gym_app {
-          background: #3B475E;
+          background: #3b475e;
           top: 190px;
         }
 
         &.oklaton {
-          background: #A59B91;
+          background: #a59b91;
           height: 460px;
 
           .card_title {
@@ -819,7 +997,7 @@ body {
           height: $height;
           display: flex;
           align-items: center;
-          background: #24262D;
+          background: #24262d;
           border: 6px solid #202126;
           box-sizing: border-box;
           border-radius: $height;
@@ -831,7 +1009,7 @@ body {
             width: $size;
             height: $size;
             border-radius: $size;
-            background: #31333D;
+            background: #31333d;
             color: colors(sec);
             font-size: 24px;
           }
