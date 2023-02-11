@@ -251,11 +251,18 @@ body header.fixed .contacts .close {
   display: none;
 }
 body header.fixed .contacts .open {
-  display: flex;
   width: 100%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 25px;
   color: #e91e63;
+  cursor: pointer;
+  border-radius: 50%;
+}
+body header.fixed .contacts .open:hover {
+  color: #4fffa0;
 }
 body header .logo {
   position: absolute;
@@ -310,9 +317,9 @@ body header nav a.active::after {
 }
 body header .contacts {
   background: #26272d;
-  width: 160px;
-  height: 160px;
-  border-radius: 160px;
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
   color: rgba(255, 255, 255, 0.6);
   padding: 10px;
   box-shadow: -4px -4px 12px rgba(217, 217, 217, 0.05), 4px 4px 12px rgba(0, 0, 0, 0.15);
@@ -323,27 +330,52 @@ body header .contacts {
   font-weight: normal;
 }
 body header .contacts .item {
+  height: 30px;
+  border-radius: 30px;
   display: flex;
-  margin: 20px auto;
+  align-items: center;
+  margin: 10px auto;
   text-align: center;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+body header .contacts .item:hover {
+  background: #000;
+  color: #4fffa0;
 }
 body header .contacts .item:nth-of-type(2) {
-  margin-left: 10px;
+  margin-left: -5px;
 }
 body header .contacts .item .icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body header .contacts .item p {
   margin-right: 10px;
 }
 body header .contacts .close {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: rgba(255, 255, 255, 0.2);
   font-size: 24px;
   position: absolute;
   top: 50%;
-  right: 20%;
+  right: 10%;
   transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+body header .contacts .close:hover {
+  color: #e91e63;
 }
 body header .contacts .open {
   display: none;
@@ -442,18 +474,6 @@ body section.cover .effects .patern .icon.tailwind {
   left: 20%;
   animation: scale-up-tailwind 5s ease-in-out infinite alternate-reverse both;
 }
-@-webkit-keyframes scale-up-tailwind {
-  0% {
-    transform: scale(0.1);
-    background: #38b2ac;
-  }
-  50% {
-    background: #202127;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes scale-up-tailwind {
   0% {
     transform: scale(0.1);
@@ -470,18 +490,6 @@ body section.cover .effects .patern .icon.react {
   top: 30%;
   left: 60%;
   animation: scale-up-react 5s ease-in-out 1s infinite alternate-reverse both;
-}
-@-webkit-keyframes scale-up-react {
-  0% {
-    transform: scale(0.1);
-    background: #61dafb;
-  }
-  50% {
-    background: #202127;
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 @keyframes scale-up-react {
   0% {
@@ -500,18 +508,6 @@ body section.cover .effects .patern .icon.sass {
   left: 60%;
   animation: scale-up-sass 5s ease-in-out 2s infinite alternate-reverse both;
 }
-@-webkit-keyframes scale-up-sass {
-  0% {
-    transform: scale(0.1);
-    background: #cb6699;
-  }
-  50% {
-    background: #202127;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes scale-up-sass {
   0% {
     transform: scale(0.1);
@@ -528,18 +524,6 @@ body section.cover .effects .patern .icon.php {
   top: 60%;
   left: 80%;
   animation: scale-up-php 5s ease-in-out 3s infinite alternate-reverse both;
-}
-@-webkit-keyframes scale-up-php {
-  0% {
-    transform: scale(0.1);
-    background: #6181b6;
-  }
-  50% {
-    background: #202127;
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 @keyframes scale-up-php {
   0% {
@@ -558,18 +542,6 @@ body section.cover .effects .patern .icon.mysql {
   left: 50%;
   animation: scale-up-mysql 5s ease-in-out 4s infinite alternate-reverse both;
 }
-@-webkit-keyframes scale-up-mysql {
-  0% {
-    transform: scale(0.1);
-    background: #00618a;
-  }
-  50% {
-    background: #202127;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes scale-up-mysql {
   0% {
     transform: scale(0.1);
@@ -587,18 +559,6 @@ body section.cover .effects .patern .icon.js {
   left: 30%;
   animation: scale-up-js 5s ease-in-out 5s infinite alternate-reverse both;
 }
-@-webkit-keyframes scale-up-js {
-  0% {
-    transform: scale(0.1);
-    background: #f0db4f;
-  }
-  50% {
-    background: #202127;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes scale-up-js {
   0% {
     transform: scale(0.1);
@@ -615,18 +575,6 @@ body section.cover .effects .patern .icon.figma {
   top: 80%;
   left: 30%;
   animation: scale-up-figma 5s ease-in-out 6s infinite alternate-reverse both;
-}
-@-webkit-keyframes scale-up-figma {
-  0% {
-    transform: scale(0.1);
-    background: #a159fe;
-  }
-  50% {
-    background: #202127;
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 @keyframes scale-up-figma {
   0% {
@@ -667,15 +615,6 @@ body section.cover .experiance .exp_years .border > div :nth-child(2n) {
 }
 body section.cover .experiance .exp_years .border > div :nth-child(2n+1) {
   animation: light-animation 1s ease-in-out 1s infinite alternate-reverse both;
-}
-@-webkit-keyframes light-animation {
-  0% {
-    background: #dcdcdc;
-  }
-  100% {
-    background: #ffffff;
-    box-shadow: 0px 0px 4px 4px rgba(255, 255, 255, 0.8);
-  }
 }
 @keyframes light-animation {
   0% {
@@ -846,7 +785,6 @@ body section.works .card .card_header .langs {
   display: flex;
   flex-wrap: wrap;
   width: 50%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin-left: 20px;

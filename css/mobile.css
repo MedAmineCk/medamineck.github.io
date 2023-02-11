@@ -371,7 +371,6 @@ body header .contacts.active .item {
   display: flex;
   margin: 20px auto;
   text-align: center;
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   color: rgba(255, 255, 255, 0.6);
@@ -596,7 +595,6 @@ body section.works .card .card_header .langs {
   display: flex;
   flex-wrap: wrap;
   width: 50%;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin-left: 20px;

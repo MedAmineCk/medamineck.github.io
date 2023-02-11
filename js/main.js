@@ -13,11 +13,9 @@ $(window).bind("scroll", function () {
 
 function checkSrollTop() {
   if ($(window).scrollTop() > 50) {
-    $("header").addClass("fixed");
-    $("header .contacts").addClass("onScroll");
+    closeContactsModule();
   } else {
-    $("header").removeClass("fixed");
-    $("header .contacts").addClass("fixed");
+    openContactsModule();
   }
 }
 
@@ -53,4 +51,14 @@ $(document).ready(function () {
 //send email
 function sendEmail() {
   window.location = "mailto:contact@medamineck.com";
+}
+
+function closeContactsModule() {
+  $("header").addClass("fixed");
+  $("header .contacts").addClass("onScroll");
+}
+
+function openContactsModule() {
+  $("header").removeClass("fixed");
+  $("header .contacts").addClass("fixed");
 }

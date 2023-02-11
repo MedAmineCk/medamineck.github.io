@@ -48,34 +48,36 @@
         <a href="#contact">Contacts</a>
       </nav>
       <div class="contacts">
-        <div class="item">
+        <div class="item" onclick="window.open('https://www.linkedin.com/in/medamineck/', '_blank')">
           <div class="icon">
             <i class="fab fa-linkedin"></i>
           </div>
           <p>LinkedIn</p>
         </div>
-        <div class="item">
+        <div class="item" onclick="window.open('https://github.com/MedAmineCk', '_blank')">
           <div class="icon">
             <i class="fab fa-github"></i>
           </div>
           <p>Github</p>
         </div>
-        <div class="item">
+        <div class="item" onclick="window.open('https://codepen.io/MedAmineCk', '_blank')">
           <div class="icon">
-            <i class="fab fa-google"></i>
+            <i class="fab fa-codepen"></i>
           </div>
-          <p>Gmail</p>
+          <p>Codepen</p>
         </div>
-        <div class="close">
+        <div class="close" onclick="closeContactsModule()">
           <i class="fas fa-times"></i>
         </div>
-        <div class="open flex_center">
+        <div class="open flex_center" onclick="openContactsModule()">
           <i class="fas fa-share-alt"></i>
         </div>
       </div>
     </div>
   </header>
+
   <main>
+
     <section class="cover" id="cover">
       <div class="main_content">
         <aside>
@@ -234,7 +236,7 @@
                 <div class="light"></div>
               </div>
             </div>
-            <div class="num_years">4</div>
+            <div class="num_years">5</div>
             <div class="label">
               <span>YEARS</span><br>
               <span>EXPERIENCE</span>
@@ -250,6 +252,7 @@
         </div>
       </div>
     </section>
+
     <section class="about" id="about">
       <div class="main_content">
         <aside>
@@ -332,6 +335,7 @@
         </div>
       </div>
     </section>
+
     <section class="works" id="works">
       <div class="main_content">
         <aside>
@@ -393,6 +397,7 @@
         </div>
       </div>
     </section>
+
     <section class="testimonial" id="testimonial">
       <div class="main_content">
         <aside>
@@ -474,6 +479,7 @@
         </div>
       </div>
     </section>
+
     <section class="news">
       <div class="main_content">
         <div class="hr_lable">
@@ -510,7 +516,9 @@
         </div>
       </div>
     </section>
+
   </main>
+
   <footer id="contact">
     <div class="main_content">
       <div class="title">Let’s Talk</div>
@@ -571,23 +579,8 @@
     } else {
       document.write('<script type="text/javascript" src="js/main.js"><\/script>');
     }
-
   </script>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () {
-      ga.q.push(arguments)
-    };
-    ga.q = [];
-    ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto');
-    ga('set', 'anonymizeIp', true);
-    ga('set', 'transport', 'beacon');
-    ga('send', 'pageview')
-
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
 </body>
 
 </html>
