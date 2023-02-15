@@ -368,6 +368,7 @@ section.cover {
   background: #26272d;
   width: 100%;
   height: 100vh;
+  max-height: 650px;
   padding: 180px 140px 0 140px;
   color: white;
 }
