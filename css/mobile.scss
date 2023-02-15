@@ -2,7 +2,8 @@
 @import "./default";
 @import "./mobile_module";
 
-@include mobile() {}
+@include mobile() {
+}
 
 body {
   width: 100%;
@@ -22,7 +23,7 @@ body {
   }
 */
 
-  .main_content {
+  .main-container {
     width: 100%;
     max-width: 1280px;
     height: 100%;
@@ -47,7 +48,7 @@ body {
     transform: translateX(-50%);
     z-index: 3;
     font-family: $Varela;
-    transition: all linear .4s;
+    transition: all linear 0.4s;
     background-color: #26272db0;
     //backdrop-filter: blur(30px);
     box-shadow: 0px 4px 10px #393b4391;
@@ -68,8 +69,8 @@ body {
         border-radius: $height;
         background-color: colors(orange);
         margin-bottom: 6px;
-        transition: all linear .2s;
-        box-shadow: 0px 0px 10px #FF5722;
+        transition: all linear 0.2s;
+        box-shadow: 0px 0px 10px #ff5722;
 
         &:nth-child(1) {
           width: 100%;
@@ -85,14 +86,12 @@ body {
       }
 
       &.open {
-
         .item {
           $height: 5px;
           height: $height;
           border-radius: $height;
           background-color: colors(orange);
           margin-bottom: 6px;
-
 
           &:nth-child(1) {
             width: 100%;
@@ -137,7 +136,7 @@ body {
         margin-bottom: 35px;
         position: relative;
         color: colors(text);
-        opacity: .8;
+        opacity: 0.8;
         font-size: 24px;
         -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
@@ -162,11 +161,11 @@ body {
           }
 
           &::before {
-            content: '<';
+            content: "<";
           }
 
           &::after {
-            content: '/>';
+            content: "/>";
           }
         }
       }
@@ -177,7 +176,7 @@ body {
       width: $size;
       height: $size;
       border-radius: $size;
-      transition: all linear .2s;
+      transition: all linear 0.2s;
       color: whites(0.6);
       padding: 10px;
       box-shadow: $shadow;
@@ -252,7 +251,6 @@ body {
   }
 
   section {
-
     &.cover {
       background-color: colors(bg);
       background-image: url(../img/pattern.svg);
@@ -327,7 +325,7 @@ body {
         .exp_years {
           $width: 140px;
           width: $width;
-          background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #FF8A00 0%, #E52E71 100%);
+          background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 100%);
           border-radius: 4px;
           padding: 10px;
           font-family: $Ubuntu;
@@ -354,7 +352,7 @@ body {
         .exp_projects {
           font-family: $Ubuntu;
           display: flex;
-          color: #67686C;
+          color: #67686c;
           height: $height/2;
           display: flex;
           margin-left: 10px;
@@ -378,7 +376,6 @@ body {
       $bg_color: colors(full_bg);
       background: $bg_color;
 
-
       aside {
         .label {
           background: $bg_color;
@@ -391,7 +388,6 @@ body {
     &.news {
       $bg_color: colors(bg);
       background-color: $bg_color;
-
 
       aside {
         .label {
@@ -426,7 +422,7 @@ body {
               }
             }
 
-            &>div {
+            & > div {
               display: flex;
               justify-content: space-between;
             }
@@ -455,7 +451,7 @@ body {
             .card_footer {
               a {
                 text-decoration: underline;
-                color: #03A9F4;
+                color: #03a9f4;
               }
             }
           }
@@ -482,7 +478,7 @@ body {
           }
 
           button {
-            background: linear-gradient(90deg, rgba(106, 108, 119, 0) 0%, #2D2E32 48.96%, rgba(106, 108, 119, 0) 100%);
+            background: linear-gradient(90deg, rgba(106, 108, 119, 0) 0%, #2d2e32 48.96%, rgba(106, 108, 119, 0) 100%);
             color: whites(0.6);
             padding: 5px 15px;
             float: right;
@@ -535,7 +531,7 @@ body {
         }
 
         &.gym_app {
-          background: #3B475E;
+          background: #3b475e;
           max-height: 460px;
 
           img {
@@ -547,7 +543,7 @@ body {
         }
 
         &.oklaton {
-          background: #A59B91;
+          background: #a59b91;
 
           .card_title {
             font-size: 28px;
@@ -790,7 +786,7 @@ body {
       }
     }
 
-    .main_content {
+    .main-container {
       .title {
         text-align: center;
         font-size: 34px;
@@ -848,7 +844,7 @@ body {
 
           &:first-of-type {
             &::before {
-              content: '-->';
+              content: "-->";
               display: block;
               position: absolute;
               margin-left: -35px;
@@ -866,7 +862,7 @@ body {
           height: $height;
           display: flex;
           align-items: center;
-          background: #24262D;
+          background: #24262d;
           border: 6px solid #202126;
           box-sizing: border-box;
           border-radius: $height;
@@ -878,7 +874,7 @@ body {
             width: $size;
             height: $size;
             border-radius: $size;
-            background: #31333D;
+            background: #31333d;
             color: colors(sec);
             font-size: 24px;
           }

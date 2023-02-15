@@ -1,0 +1,142 @@
+section.about {
+    font-family: $Ubuntu;
+    .flex_content {
+        display: flex;
+
+        .what_i_do {
+            .card {
+                background: colors(bg);
+                padding: 20px;
+                border-radius: 4px;
+                line-height: 38px;
+                margin-bottom: 10px;
+                margin-right: 20px;
+                cursor: pointer;
+
+                &.active,
+                &:hover {
+                    .card_header {
+                        color: colors(sec);
+                    }
+                }
+
+                .card_header {
+                    display: flex;
+                    justify-content: space-between;
+                    $fontSize: 24px;
+                    font-size: $fontSize;
+                    color: whites(0.8);
+
+                    .icon {
+                        $size: 35px;
+                        width: $size;
+                        height: $size;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                }
+
+                .card_body {
+                    margin-bottom: 20px;
+                    p {
+                        color: whites(0.6);
+                        line-height: 26px;
+                        font-weight: normal;
+                    }
+                }
+
+                .card_tools {
+                    .tools {
+                        display: flex;
+                        margin-bottom: 20px;
+                        .label {
+                            $size: 35px;
+                            width: fit-content;
+                            height: 35px;
+                            background: #000;
+                            border-radius: $size;
+                            display: flex;
+                            align-items: center;
+                            padding-right: 20px;
+                            margin-right: 20px;
+                            .icon {
+                                width: $size;
+                                height: $size;
+                                border-radius: $size;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                .dote {
+                                    $size: $size/2;
+                                    width: $size;
+                                    height: $size;
+                                    border-radius: $size;
+                                    background: #4fffa0;
+                                }
+                            }
+                            span {
+                                color: #fff;
+                            }
+                        }
+                        .tags-container {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 20px;
+                            .tag {
+                                width: fit-content;
+                                height: 35px;
+                                border-radius: 4px;
+                                color: #000;
+                                background: #d9d9d9;
+                                padding: 10px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                        }
+                    }
+                }
+                a {
+                    text-decoration: underline;
+                    color: #03a9f4;
+                }
+            }
+        }
+
+        .introduce {
+            .title {
+                color: whites(0.8);
+                font-size: 40px;
+            }
+
+            .min_title {
+                color: whites(0.6);
+                font-size: 25px;
+                font-style: italic;
+                margin-top: 20px;
+            }
+
+            p {
+                color: whites(0.4);
+                font-size: 20px;
+                line-height: 36px;
+                margin-top: 10px;
+            }
+
+            button {
+                background: linear-gradient(
+                    90deg,
+                    rgba(106, 108, 119, 0) 0%,
+                    #2d2e32 48.96%,
+                    rgba(106, 108, 119, 0) 100%
+                );
+                color: whites(0.6);
+                padding: 10px 25px;
+                float: right;
+                text-decoration: underline;
+                font-size: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,136 @@
+@import "../variables";
+@import "../default";
+@import "../module";
+@import "../sections/header";
+@import "../sections/footer";
+
+main {
+    font-family: $Ubuntu;
+    .titel_label {
+        margin-top: 200px;
+        &::before {
+            content: "Projects";
+        }
+    }
+    .container {
+        max-width: 1080px;
+        margin: 0 auto;
+
+        .card-item {
+            display: flex;
+            background: #2a2b31;
+            border: 2px solid #4fffa0;
+            border-radius: 24px;
+            padding: 20px;
+            margin-bottom: 60px;
+            box-shadow: 30px 30px 4px rgba(0, 0, 0, 0.15);
+            &:nth-child(2n) {
+                border: 2px solid #ff8a00;
+            }
+
+            .thumbnail-parent {
+                max-width: 400px;
+                width: 400px;
+                min-width: 400px;
+                margin-right: 20px;
+                .thumbnail-container {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    img {
+                        max-width: 100%;
+                    }
+                }
+                .buttons-group-container {
+                    display: flex;
+                    gap: 20px;
+                    a {
+                        .icon {
+                            width: 80px;
+                            height: 60px;
+                            cursor: pointer;
+                            background: #000;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 12px;
+                            margin-bottom: 5px;
+                            img {
+                                max-width: 100%;
+                                max-height: 100%;
+                            }
+                        }
+                        .icon-label {
+                            color: #fff;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+
+            .content {
+                .project-title {
+                    font-weight: bold;
+                    font-size: 34px;
+                    color: #fff;
+                    line-height: 80px;
+                }
+                p.description {
+                    color: #fff;
+                    opacity: 0.8;
+                    font-size: 24px;
+                    line-height: 35px;
+                    margin-bottom: 40px;
+                }
+                .tools {
+                    display: flex;
+                    margin-bottom: 20px;
+                    .label {
+                        $size: 35px;
+                        width: fit-content;
+                        height: 35px;
+                        background: #000;
+                        border-radius: $size;
+                        display: flex;
+                        align-items: center;
+                        padding-right: 20px;
+                        margin-right: 20px;
+                        .icon {
+                            width: $size;
+                            height: $size;
+                            border-radius: $size;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            .dote {
+                                $size: $size/2;
+                                width: $size;
+                                height: $size;
+                                border-radius: $size;
+                                background: #4fffa0;
+                            }
+                        }
+                        span {
+                            color: #fff;
+                        }
+                    }
+                    .tags-container {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 20px;
+                        .tag {
+                            width: fit-content;
+                            height: 35px;
+                            border-radius: 4px;
+                            color: #000;
+                            background: #d9d9d9;
+                            padding: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -206,7 +206,7 @@ body {
     }
   */
 }
-body .main_content {
+body .main-container {
   width: 100%;
   max-width: 1280px;
   height: 100%;
@@ -247,7 +247,7 @@ body header .nav_tab_icon .item {
   background-color: #ff8a00;
   margin-bottom: 6px;
   transition: all linear 0.2s;
-  box-shadow: 0px 0px 10px #FF5722;
+  box-shadow: 0px 0px 10px #ff5722;
 }
 body header .nav_tab_icon .item:nth-child(1) {
   width: 100%;
@@ -456,7 +456,7 @@ body section.cover .experiance {
 }
 body section.cover .experiance .exp_years {
   width: 140px;
-  background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #FF8A00 0%, #E52E71 100%);
+  background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 100%);
   border-radius: 4px;
   padding: 10px;
   font-family: "Ubuntu", sans-serif;
@@ -479,7 +479,7 @@ body section.cover .experiance .exp_years .label {
 body section.cover .experiance .exp_projects {
   font-family: "Ubuntu", sans-serif;
   display: flex;
-  color: #67686C;
+  color: #67686c;
   height: 30px;
   display: flex;
   margin-left: 10px;
@@ -545,7 +545,7 @@ body section.about .flex_content .what_i_do .card .card_body p {
 }
 body section.about .flex_content .what_i_do .card .card_footer a {
   text-decoration: underline;
-  color: #03A9F4;
+  color: #03a9f4;
 }
 body section.about .flex_content .introduce .title {
   color: rgba(255, 255, 255, 0.8);
@@ -564,7 +564,7 @@ body section.about .flex_content .introduce p {
   margin-top: 10px;
 }
 body section.about .flex_content .introduce button {
-  background: linear-gradient(90deg, rgba(106, 108, 119, 0) 0%, #2D2E32 48.96%, rgba(106, 108, 119, 0) 100%);
+  background: linear-gradient(90deg, rgba(106, 108, 119, 0) 0%, #2d2e32 48.96%, rgba(106, 108, 119, 0) 100%);
   color: rgba(255, 255, 255, 0.6);
   padding: 5px 15px;
   float: right;
@@ -610,7 +610,7 @@ body section.works .card .card_header .langs .item {
   display: block;
 }
 body section.works .card.gym_app {
-  background: #3B475E;
+  background: #3b475e;
   max-height: 460px;
 }
 body section.works .card.gym_app img {
@@ -620,7 +620,7 @@ body section.works .card.gym_app img {
   margin-top: -50px;
 }
 body section.works .card.oklaton {
-  background: #A59B91;
+  background: #a59b91;
 }
 body section.works .card.oklaton .card_title {
   font-size: 28px;
@@ -813,87 +813,87 @@ body footer .bottom .copy {
   color: #000;
   font-size: 14px;
 }
-body footer .main_content .title {
+body footer .main-container .title {
   text-align: center;
   font-size: 34px;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 20px;
 }
-body footer .main_content .footer_content {
+body footer .main-container .footer_content {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
 }
-body footer .main_content .right {
+body footer .main-container .right {
   font-size: 28px;
   color: rgba(255, 255, 255, 0.6);
 }
-body footer .main_content .right a {
+body footer .main-container .right a {
   color: #4fffa0;
   text-decoration: underline;
   font-size: 18px;
   text-align: center;
   margin: 0 auto;
 }
-body footer .main_content .right .social-media {
+body footer .main-container .right .social-media {
   margin-top: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-body footer .main_content .right .social-media .item {
+body footer .main-container .right .social-media .item {
   width: 60px;
   height: 60px;
   border-radius: 60px;
   background: #111;
 }
-body footer .main_content .medium .label {
+body footer .main-container .medium .label {
   color: rgba(255, 255, 255, 0.8);
   font-size: 24px;
   margin-bottom: 15px;
 }
-body footer .main_content .medium a {
+body footer .main-container .medium a {
   color: rgba(255, 255, 255, 0.6);
   font-size: 18px;
   display: block;
   margin-left: 40px;
 }
-body footer .main_content .medium a:first-of-type::before {
+body footer .main-container .medium a:first-of-type::before {
   content: "-->";
   display: block;
   position: absolute;
   margin-left: -35px;
   color: #4fffa0;
 }
-body footer .main_content .left {
+body footer .main-container .left {
   margin-bottom: 10px;
 }
-body footer .main_content .left .item {
+body footer .main-container .left .item {
   height: 60px;
   display: flex;
   align-items: center;
-  background: #24262D;
+  background: #24262d;
   border: 6px solid #202126;
   box-sizing: border-box;
   border-radius: 60px;
   margin-bottom: 10px;
   padding-right: 20px;
 }
-body footer .main_content .left .item .icon {
+body footer .main-container .left .item .icon {
   width: 50px;
   height: 50px;
   border-radius: 50px;
-  background: #31333D;
+  background: #31333d;
   color: #4fffa0;
   font-size: 24px;
 }
-body footer .main_content .left .item span {
+body footer .main-container .left .item span {
   margin-left: 20px;
   color: rgba(255, 255, 255, 0.6);
   font-size: 18px;
 }
-body footer .main_content .hr {
+body footer .main-container .hr {
   display: none;
 }
 body section.cover img,

@@ -1,0 +1,99 @@
+section.testimonial {
+    padding-top: 10px;
+    font-family: $Ubuntu;
+
+    .hr_lable {
+        margin-left: 134px;
+        margin-top: -40px;
+    }
+
+    .comment_preview {
+        width: 1000px;
+        margin: 0 auto;
+        margin-top: 20px;
+        min-height: 300px;
+        border-radius: 12px;
+        background: colors(full_bg);
+        padding: 40px;
+
+        .rating {
+            .stars {
+                color: colors(sec);
+                margin-right: 10px;
+            }
+
+            .r_val {
+                color: whites(0.4);
+            }
+        }
+
+        p.preview {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: whites(0.6);
+            font-size: 24px;
+            font-style: italic;
+        }
+
+        .icon {
+            font-size: 100px;
+            color: colors(bg);
+        }
+    }
+
+    .clients {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        cursor: pointer;
+
+        .item {
+            width: 330px;
+            height: 80px;
+            $size: 60px;
+            display: flex;
+            border-bottom: 1px solid colors(full_bg);
+
+            &.active {
+                border-bottom: 1px solid colors(sec);
+            }
+
+            .avatar {
+                width: $size;
+                height: $size;
+                border-radius: $size;
+                background-size: cover;
+                margin-right: 10px;
+            }
+
+            .user_info {
+                .user_name {
+                    font-size: 18px;
+                    color: whites(0.6);
+                }
+
+                .desc {
+                    font-size: 14px;
+                    color: whites(0.4);
+                }
+            }
+        }
+    }
+
+    .sponsors {
+        width: 1000px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        margin-top: 80px;
+
+        .item {
+            margin: 20px;
+        }
+    }
+}

@@ -1,0 +1,350 @@
+section.cover {
+    $padding_left: 140px;
+    background: colors(bg);
+    width: 100%;
+    height: 100vh;
+    padding: 180px 140px 0 $padding_left;
+    color: white;
+
+    .container {
+        position: relative;
+        z-index: 2;
+
+        h1 {
+            font-family: $Ubuntu;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 72px;
+            color: whites(0.8);
+
+            span {
+                background: $gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        p {
+            font-family: $Ubuntu;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 32px;
+            color: whites(0.6);
+        }
+
+        .btns {
+            display: flex;
+            margin-top: 60px;
+            align-items: center;
+
+            button {
+                $height: 45px;
+                height: $height;
+                border-radius: $height;
+                background-color: colors(bg);
+                box-shadow: $shadow;
+                padding: 10px 20px;
+                color: colors(sec);
+                font-family: $Varela;
+                margin-right: 40px;
+            }
+
+            a {
+                color: colors(sec);
+                font-family: $Varela;
+                display: flex;
+
+                .icon {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    .effects {
+        width: 600px;
+        height: 600px;
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        bottom: 0;
+
+        .bg_img {
+            width: 80%;
+            height: 80%;
+            border-radius: 50%;
+            background-image: url(../img/profile.png);
+            background-size: cover;
+            background-position: center;
+            &:after {
+                content: "";
+                width: 101%;
+                height: 101%;
+                background: #000;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                background: radial-gradient(50% 50% at 50% 50%, rgba(38, 39, 45, 0.76) 0%, #26272d 100%);
+            }
+        }
+
+        .patern {
+            .icon {
+                $size: 80px;
+                width: $size;
+                height: $size;
+                border-radius: $size;
+                background: #202127;
+                padding: 10px;
+                position: absolute;
+
+                &.tailwind {
+                    top: 50%;
+                    left: 20%;
+                    animation: scale-up-tailwind 5s ease-in-out infinite alternate-reverse both;
+                }
+
+                @keyframes scale-up-tailwind {
+                    0% {
+                        transform: scale(0.1);
+                        background: icons(tailwind);
+                    }
+                    50% {
+                        background: #202127;
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                &.react {
+                    top: 30%;
+                    left: 60%;
+                    animation: scale-up-react 5s ease-in-out 1s infinite alternate-reverse both;
+                }
+                @keyframes scale-up-react {
+                    0% {
+                        transform: scale(0.1);
+                        background: icons(react);
+                    }
+                    50% {
+                        background: #202127;
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                &.sass {
+                    top: 80%;
+                    left: 60%;
+                    animation: scale-up-sass 5s ease-in-out 2s infinite alternate-reverse both;
+                }
+                @keyframes scale-up-sass {
+                    0% {
+                        transform: scale(0.1);
+                        background: icons(sass);
+                    }
+                    50% {
+                        background: #202127;
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                &.php {
+                    top: 60%;
+                    left: 80%;
+                    animation: scale-up-php 5s ease-in-out 3s infinite alternate-reverse both;
+                }
+                @keyframes scale-up-php {
+                    0% {
+                        transform: scale(0.1);
+                        background: icons(php);
+                    }
+                    50% {
+                        background: #202127;
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                &.mysql {
+                    top: 50%;
+                    left: 50%;
+                    animation: scale-up-mysql 5s ease-in-out 4s infinite alternate-reverse both;
+                }
+                @keyframes scale-up-mysql {
+                    0% {
+                        transform: scale(0.1);
+                        background: icons(mysql);
+                    }
+                    50% {
+                        background: #202127;
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                &.js {
+                    top: 30%;
+                    left: 30%;
+                    animation: scale-up-js 5s ease-in-out 5s infinite alternate-reverse both;
+                }
+                @keyframes scale-up-js {
+                    0% {
+                        transform: scale(0.1);
+                        background: icons(js);
+                    }
+                    50% {
+                        background: #202127;
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                &.figma {
+                    top: 80%;
+                    left: 30%;
+                    animation: scale-up-figma 5s ease-in-out 6s infinite alternate-reverse both;
+                }
+                @keyframes scale-up-figma {
+                    0% {
+                        transform: scale(0.1);
+                        background: icons(figma);
+                    }
+                    50% {
+                        background: #202127;
+                    }
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+
+    .experiance {
+        position: absolute;
+        $height: 100px;
+        height: $height;
+        bottom: -$height/2;
+        display: flex;
+
+        .exp_years {
+            $width: 240px;
+            width: $width;
+            background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 100%);
+            border-radius: 4px;
+            padding: 20px;
+            font-family: $Ubuntu;
+            position: relative;
+
+            .border {
+                height: $height - 5px;
+                width: $width - 5px;
+                position: absolute;
+                & > div {
+                    position: absolute;
+                    :nth-child(2n) {
+                        animation: light-animation 1s ease-in-out infinite alternate-reverse both;
+                    }
+                    :nth-child(2n + 1) {
+                        animation: light-animation 1s ease-in-out 1s infinite alternate-reverse both;
+                    }
+                    @keyframes light-animation {
+                        0% {
+                            background: #dcdcdc;
+                        }
+                        100% {
+                            background: #ffffff;
+                            box-shadow: 0px 0px 4px 4px rgba(255, 255, 255, 0.8);
+                        }
+                    }
+                }
+                .light {
+                    $size: 10px;
+                    width: $size;
+                    height: $size;
+                    background: #dcdcdc;
+                    border-radius: $size;
+                }
+                .top,
+                .bottom {
+                    display: flex;
+                    justify-content: space-around;
+                    width: 100%;
+                }
+                .right,
+                .left {
+                    top: $padding;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    top: 0;
+                    padding: 6px 0;
+                }
+                $margin: 6px;
+                .top {
+                    top: $margin;
+                }
+                .bottom {
+                    bottom: $margin;
+                }
+                .left {
+                    left: $margin;
+                }
+                .right {
+                    right: $margin;
+                }
+            }
+
+            .num_years {
+                font-size: 65px;
+                font-weight: bolder;
+            }
+
+            .label {
+                font-size: 25px;
+                font-weight: 400;
+                opacity: 1;
+                color: #fff;
+            }
+
+            .num_years,
+            .label {
+                -webkit-text-stroke: 1px #ffeb3b;
+            }
+        }
+
+        .exp_projects {
+            font-family: $Ubuntu;
+            display: flex;
+            color: #67686c;
+            height: $height/2;
+            display: flex;
+            margin-left: 20px;
+
+            .num_project,
+            .label {
+                font-size: 65px;
+                font-weight: bolder;
+                margin-right: 20px;
+            }
+
+            .label {
+                color: #67686c;
+                font-size: 24px;
+                margin-bottom: -34px;
+            }
+        }
+    }
+}
