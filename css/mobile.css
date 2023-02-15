@@ -149,8 +149,8 @@ hr {
 }
 .titel_label.testimonial_tt::before {
   content: "T";
-  left: -28px;
-  bottom: -154px;
+  left: -4px;
+  bottom: -60px;
   margin-left: -16px;
 }
 
@@ -188,39 +188,10 @@ aside .label {
   width: 50px;
 }
 
-body {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  background: #1c1d22;
-  /*
-    &::after {
-      content: "";
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      border: 2px solid red;
-    }
-  */
-}
-body .main-container {
-  width: 100%;
-  max-width: 1280px;
-  height: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-body header,
-body section {
-  width: 100%;
-}
-body header {
+header {
   width: 100%;
   margin: 0 auto;
-  height: 80px;
+  height: 60px;
   display: flex;
   align-items: center;
   position: fixed;
@@ -231,17 +202,19 @@ body header {
   font-family: "Varela Round", sans-serif;
   transition: all linear 0.4s;
   background-color: rgba(38, 39, 45, 0.6901960784);
+  -webkit-backdrop-filter: blur(30px);
+          backdrop-filter: blur(30px);
   box-shadow: 0px 4px 10px rgba(57, 59, 67, 0.568627451);
 }
-body header .nav_tab_icon {
+header .nav_tab_icon {
   width: 30px;
   height: 50px;
   position: absolute;
   z-index: 3;
-  top: 25px;
-  left: 25px;
+  top: 20px;
+  left: 20px;
 }
-body header .nav_tab_icon .item {
+header .nav_tab_icon .item {
   height: 5px;
   border-radius: 5px;
   background-color: #ff8a00;
@@ -249,36 +222,36 @@ body header .nav_tab_icon .item {
   transition: all linear 0.2s;
   box-shadow: 0px 0px 10px #ff5722;
 }
-body header .nav_tab_icon .item:nth-child(1) {
+header .nav_tab_icon .item:nth-child(1) {
   width: 100%;
 }
-body header .nav_tab_icon .item:nth-child(2) {
+header .nav_tab_icon .item:nth-child(2) {
   width: 60%;
 }
-body header .nav_tab_icon .item:nth-child(3) {
+header .nav_tab_icon .item:nth-child(3) {
   width: 30%;
 }
-body header .nav_tab_icon.open .item {
+header .nav_tab_icon.open .item {
   height: 5px;
   border-radius: 5px;
   background-color: #ff8a00;
   margin-bottom: 6px;
 }
-body header .nav_tab_icon.open .item:nth-child(1) {
+header .nav_tab_icon.open .item:nth-child(1) {
   width: 100%;
   transform: rotate(-45deg) translate(-8px, 6px);
 }
-body header .nav_tab_icon.open .item:nth-child(2) {
+header .nav_tab_icon.open .item:nth-child(2) {
   width: 100%;
   transform: rotate(45deg);
 }
-body header .nav_tab_icon.open .item:nth-child(3) {
+header .nav_tab_icon.open .item:nth-child(3) {
   display: none;
 }
-body header .logo {
+header .logo {
   display: none;
 }
-body header nav {
+header nav {
   display: none;
   position: absolute;
   z-index: 2;
@@ -293,10 +266,10 @@ body header nav {
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
 }
-body header nav.active {
+header nav.active {
   display: flex;
 }
-body header nav a {
+header nav a {
   margin-bottom: 35px;
   position: relative;
   color: rgba(255, 255, 255, 0.8);
@@ -304,29 +277,29 @@ body header nav a {
   font-size: 24px;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-body header nav a:active {
+header nav a:active {
   background-color: black;
 }
-body header nav a:hover {
+header nav a:hover {
   cursor: pointer;
   opacity: 1;
 }
-body header nav a.active {
+header nav a.active {
   opacity: 1;
   font-size: bolder;
   color: #4fffa0;
 }
-body header nav a.active::after, body header nav a.active::before {
+header nav a.active::after, header nav a.active::before {
   color: #4fffa0;
   display: inline-block;
 }
-body header nav a.active::before {
+header nav a.active::before {
   content: "<";
 }
-body header nav a.active::after {
+header nav a.active::after {
   content: "/>";
 }
-body header .contacts {
+header .contacts {
   width: 70px;
   height: 70px;
   border-radius: 70px;
@@ -336,27 +309,27 @@ body header .contacts {
   box-shadow: -4px -4px 12px rgba(217, 217, 217, 0.05), 4px 4px 12px rgba(0, 0, 0, 0.15);
   position: absolute;
   right: 20px;
-  top: 40px;
+  top: 20px;
   font-size: 14px;
   font-weight: normal;
   background: #26272d;
   box-shadow: -4px -4px 4px rgba(65, 65, 65, 0.15), 4px 4px 12px rgba(0, 0, 0, 0.15);
   border-bottom: 2px solid #4fffa0;
 }
-body header .contacts .item {
+header .contacts .item {
   display: none;
 }
-body header .contacts .close {
+header .contacts .close {
   display: none;
 }
-body header .contacts .open {
+header .contacts .open {
   display: flex;
   width: 100%;
   height: 100%;
   font-size: 25px;
   color: rgba(255, 255, 255, 0.6);
 }
-body header .contacts.active {
+header .contacts.active {
   width: 160px;
   height: 160px;
   border-radius: 160px;
@@ -367,7 +340,7 @@ body header .contacts.active {
   font-size: 14px;
   font-weight: normal;
 }
-body header .contacts.active .item {
+header .contacts.active .item {
   display: flex;
   margin: 20px auto;
   text-align: center;
@@ -375,13 +348,13 @@ body header .contacts.active .item {
   width: fit-content;
   color: rgba(255, 255, 255, 0.6);
 }
-body header .contacts.active .item:nth-of-type(2) {
+header .contacts.active .item:nth-of-type(2) {
   margin-left: 10px;
 }
-body header .contacts.active .item .icon {
+header .contacts.active .item .icon {
   margin-right: 10px;
 }
-body header .contacts.active .close {
+header .contacts.active .close {
   display: block;
   color: rgba(255, 255, 255, 0.2);
   font-size: 24px;
@@ -390,47 +363,51 @@ body header .contacts.active .close {
   right: 20%;
   transform: translateY(-50%);
 }
-body header .contacts.active .open {
+header .contacts.active .open {
   display: none;
 }
-body section.cover {
+
+section.cover {
   background-color: #26272d;
-  background-image: url(../img/pattern.svg);
   background-size: contain;
   width: 100%;
   height: 100vh;
+  max-height: 560px;
   color: white;
   padding: 100px 20px 0 20px;
+  display: block;
 }
-body section.cover .container {
+section.cover .container {
   position: relative;
   z-index: 2;
 }
-body section.cover .container h1 {
+section.cover .container h1 {
   font-family: "Ubuntu", sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 72px;
+  font-size: 50px;
   color: rgba(255, 255, 255, 0.8);
 }
-body section.cover .container h1 span {
+section.cover .container h1 span {
   background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-body section.cover .container p {
+section.cover .container p {
   font-family: "Ubuntu", sans-serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 32px;
+  font-size: 24px;
   color: rgba(255, 255, 255, 0.6);
+  max-width: 350px;
 }
-body section.cover .container .btns {
+section.cover .container .btns {
   display: flex;
   margin-top: 60px;
   align-items: center;
+  flex-wrap: wrap;
 }
-body section.cover .container .btns button {
+section.cover .container .btns button {
   height: 45px;
   border-radius: 45px;
   background-color: #26272d;
@@ -438,23 +415,25 @@ body section.cover .container .btns button {
   padding: 10px 20px;
   color: #4fffa0;
   font-family: "Varela Round", sans-serif;
-  margin-right: 40px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
-body section.cover .container .btns a {
+section.cover .container .btns a {
   color: #4fffa0;
   font-family: "Varela Round", sans-serif;
   display: flex;
+  margin-bottom: 20px;
 }
-body section.cover .container .btns a .icon {
+section.cover .container .btns a .icon {
   margin-right: 15px;
 }
-body section.cover .experiance {
+section.cover .experiance {
   position: absolute;
   height: 60px;
   bottom: -30px;
   display: flex;
 }
-body section.cover .experiance .exp_years {
+section.cover .experiance .exp_years {
   width: 140px;
   background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 100%);
   border-radius: 4px;
@@ -462,21 +441,21 @@ body section.cover .experiance .exp_years {
   font-family: "Ubuntu", sans-serif;
   position: relative;
 }
-body section.cover .experiance .exp_years .border {
+section.cover .experiance .exp_years .border {
   border: 2px dashed white;
   height: 50px;
   width: 130px;
   position: absolute;
 }
-body section.cover .experiance .exp_years .num_years {
+section.cover .experiance .exp_years .num_years {
   font-size: 34px;
   font-weight: bolder;
   margin-right: 10px;
 }
-body section.cover .experiance .exp_years .label {
+section.cover .experiance .exp_years .label {
   font-size: 12px;
 }
-body section.cover .experiance .exp_projects {
+section.cover .experiance .exp_projects {
   font-family: "Ubuntu", sans-serif;
   display: flex;
   color: #67686c;
@@ -484,14 +463,392 @@ body section.cover .experiance .exp_projects {
   display: flex;
   margin-left: 10px;
 }
-body section.cover .experiance .exp_projects .num_project {
+section.cover .experiance .exp_projects .num_project {
   font-size: 24px;
   font-weight: bolder;
   margin-right: 10px;
 }
-body section.cover .experiance .exp_projects .label {
+section.cover .experiance .exp_projects .label {
   font-size: 12px;
   font-weight: 400;
+}
+
+section.about {
+  padding: 0 20px;
+  display: block;
+}
+section.about .flex_content {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column-reverse;
+  font-family: "Ubuntu", sans-serif;
+}
+section.about .flex_content .what_i_do .card {
+  background: #26272d;
+  padding: 10px;
+  border-radius: 4px;
+  line-height: 38px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+section.about .flex_content .what_i_do .card.active .card_header, section.about .flex_content .what_i_do .card:hover .card_header {
+  color: #4fffa0;
+}
+section.about .flex_content .what_i_do .card .card_header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+}
+section.about .flex_content .what_i_do .card .card_header .icon {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.about .flex_content .what_i_do .card .card_body {
+  margin-bottom: 20px;
+}
+section.about .flex_content .what_i_do .card .card_body p {
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 26px;
+  font-weight: normal;
+}
+section.about .flex_content .what_i_do .card .card_tools .tools {
+  display: flex;
+  margin-bottom: 10px;
+}
+section.about .flex_content .what_i_do .card .card_tools .tools .label {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 24px;
+  background: #000;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+section.about .flex_content .what_i_do .card .card_tools .tools .label .icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section.about .flex_content .what_i_do .card .card_tools .tools .label .icon .dote {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: #4fffa0;
+}
+section.about .flex_content .what_i_do .card .card_tools .tools .label span {
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+}
+section.about .flex_content .what_i_do .card .card_tools .tools .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+section.about .flex_content .what_i_do .card .card_tools .tools .tags-container .tag {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 24px;
+  border-radius: 4px;
+  color: #000;
+  background: #d9d9d9;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+section.about .flex_content .what_i_do .card a {
+  text-decoration: underline;
+  color: #03a9f4;
+}
+section.about .flex_content .introduce {
+  margin-bottom: 20px;
+}
+section.about .flex_content .introduce .title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+}
+section.about .flex_content .introduce .min_title {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 10px;
+}
+section.about .flex_content .introduce p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  line-height: 25px;
+  margin-top: 10px;
+}
+section.about .flex_content .introduce p.mobile-hide {
+  display: none;
+}
+section.about .flex_content .introduce button {
+  background: linear-gradient(90deg, rgba(106, 108, 119, 0) 0%, #2d2e32 48.96%, rgba(106, 108, 119, 0) 100%);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 5px 15px;
+  float: right;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+section.works {
+  padding: 0 20px;
+  width: 100vw;
+  overflow: hidden;
+}
+section.works .flex_content {
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+section.works .card {
+  width: 100%;
+  border-radius: 12px;
+  margin: 10px 0;
+  padding: 20px;
+  font-family: "Ubuntu", sans-serif;
+  cursor: pointer;
+}
+section.works .card.mobile-hide {
+  display: none !important;
+}
+section.works .card img {
+  max-width: 100%;
+}
+section.works .card .card_header {
+  display: flex;
+  margin-bottom: 20px;
+}
+section.works .card .card_header .langs {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-left: 20px;
+  justify-content: flex-end;
+}
+section.works .card .card_header .langs .item {
+  background: #26272d;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 2px 4px;
+  border-radius: 4px;
+  margin: 2px;
+  font-size: 12px;
+  display: block;
+}
+section.works .card.delivery {
+  background: #8e937d;
+  top: 190px;
+}
+section.works .card.blog {
+  background: #785b68;
+}
+section.works .card.callCenter {
+  background: #5b8390;
+}
+section.works .card.all_projects_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  font-size: 24px;
+}
+section.works .card.all_projects_link a {
+  color: #4fffa0;
+}
+section.works .card .card_title {
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Ubuntu", sans-serif;
+  font-size: 24px;
+}
+
+section.testimonial {
+  padding: 20px 20px;
+  font-family: "Ubuntu", sans-serif;
+}
+section.testimonial .hr_lable {
+  margin-left: 20px;
+  margin-top: -20px;
+}
+section.testimonial .comment_preview {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  border-radius: 12px;
+  background: #1c1d22;
+  padding: 30px;
+}
+section.testimonial .comment_preview .rating .stars {
+  color: #4fffa0;
+  margin-right: 10px;
+}
+section.testimonial .comment_preview .rating .r_val {
+  color: rgba(255, 255, 255, 0.4);
+}
+section.testimonial .comment_preview p.preview {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-style: italic;
+}
+section.testimonial .comment_preview .icon {
+  font-size: 30px;
+  color: #26272d;
+  position: absolute;
+  right: 20px;
+}
+section.testimonial .clients {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+section.testimonial .clients .item {
+  width: 100px;
+  height: 40px;
+  display: flex;
+  border-bottom: 1px solid #1c1d22;
+}
+section.testimonial .clients .item.active {
+  border-bottom: 1px solid #4fffa0;
+}
+section.testimonial .clients .item .avatar {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  min-height: 30px;
+  border-radius: 30px;
+  background-size: cover;
+  margin-right: 10px;
+}
+section.testimonial .clients .item .user_info .user_name {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+section.testimonial .clients .item .user_info .desc {
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.4);
+}
+section.testimonial .sponsors {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+section.testimonial .sponsors .item {
+  margin: 10px;
+  width: 60px;
+}
+section.testimonial .sponsors .item img {
+  max-width: 100%;
+}
+
+footer {
+  width: 100%;
+  background: #15161c;
+  font-family: "Ubuntu", sans-serif;
+  position: relative;
+}
+footer .container {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+footer .container .profiles {
+  margin-bottom: 20px;
+}
+footer .container .profiles .label {
+  line-height: 60px;
+}
+footer .container .profiles .profiles-links {
+  display: flex;
+  gap: 20px;
+}
+footer .container .profiles .profiles-links a {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: #000;
+  font-size: 25px;
+  opacity: 0.6;
+}
+footer .container .contact-info .button-container {
+  margin-bottom: 20px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+footer .container .contact-info .button-container button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 4px;
+  background: #4fffa0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .container .contact-info .button-container button span {
+  margin-right: 10px;
+}
+footer .container .contact-info .contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #fff;
+}
+footer .container .contact-info .contacts .item {
+  display: flex;
+  gap: 10px;
+}
+footer .copyright {
+  width: 100%;
+  height: 45px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.2549019608);
+  font-size: 12px;
+  text-align: center;
+  padding: 20px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #1c1d22;
+}
+body .main-container {
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 body section.about, body section.works {
   background: #1c1d22;
@@ -505,241 +862,6 @@ body section.cover, body section.testimonial, body section.news {
 body section.cover aside .label, body section.testimonial aside .label, body section.news aside .label {
   background: #26272d;
 }
-body section.about {
-  padding: 0 20px;
-}
-body section.about .flex_content {
-  display: flex;
-  flex-direction: column;
-  flex-flow: column-reverse;
-  font-family: "Ubuntu", sans-serif;
-}
-body section.about .flex_content .what_i_do .card {
-  background: #26272d;
-  padding: 20px;
-  border-radius: 4px;
-  line-height: 38px;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-body section.about .flex_content .what_i_do .card.active .card_header, body section.about .flex_content .what_i_do .card:hover .card_header {
-  color: #4fffa0;
-}
-body section.about .flex_content .what_i_do .card > div {
-  display: flex;
-  justify-content: space-between;
-}
-body section.about .flex_content .what_i_do .card .card_header {
-  font-size: 24px;
-  color: rgba(255, 255, 255, 0.8);
-}
-body section.about .flex_content .what_i_do .card .card_header .icon {
-  width: 35px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-body section.about .flex_content .what_i_do .card .card_body p {
-  color: rgba(255, 255, 255, 0.6);
-}
-body section.about .flex_content .what_i_do .card .card_footer a {
-  text-decoration: underline;
-  color: #03a9f4;
-}
-body section.about .flex_content .introduce .title {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 28px;
-}
-body section.about .flex_content .introduce .min_title {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 18px;
-  font-style: italic;
-  margin-top: 10px;
-}
-body section.about .flex_content .introduce p {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 14px;
-  line-height: 25px;
-  margin-top: 10px;
-}
-body section.about .flex_content .introduce button {
-  background: linear-gradient(90deg, rgba(106, 108, 119, 0) 0%, #2d2e32 48.96%, rgba(106, 108, 119, 0) 100%);
-  color: rgba(255, 255, 255, 0.6);
-  padding: 5px 15px;
-  float: right;
-  text-decoration: underline;
-  font-size: 14px;
-}
-body section.works {
-  padding: 0 20px;
-  width: 100vw;
-  overflow: hidden;
-}
-body section.works .flex_content {
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-body section.works .card {
-  width: 100%;
-  border-radius: 12px;
-  margin: 10px 0;
-  padding: 20px;
-  font-family: "Ubuntu", sans-serif;
-}
-body section.works .card .card_header {
-  display: flex;
-  margin-bottom: 20px;
-}
-body section.works .card .card_header .langs {
-  display: flex;
-  flex-wrap: wrap;
-  width: 50%;
-  height: -moz-fit-content;
-  height: fit-content;
-  margin-left: 20px;
-  justify-content: flex-end;
-}
-body section.works .card .card_header .langs .item {
-  background: #26272d;
-  color: rgba(255, 255, 255, 0.6);
-  padding: 2px 4px;
-  border-radius: 4px;
-  margin: 2px;
-  font-size: 12px;
-  display: block;
-}
-body section.works .card.gym_app {
-  background: #3b475e;
-  max-height: 460px;
-}
-body section.works .card.gym_app img {
-  max-width: 100%;
-  max-width: 200%;
-  margin-left: -100px;
-  margin-top: -50px;
-}
-body section.works .card.oklaton {
-  background: #a59b91;
-}
-body section.works .card.oklaton .card_title {
-  font-size: 28px;
-}
-body section.works .card.oklaton img {
-  max-width: 100%;
-}
-body section.works .card.delivery {
-  background: #5b8390;
-}
-body section.works .card.delivery .card_title {
-  font-size: 22px;
-}
-body section.works .card.delivery .card_body {
-  border-radius: 12px;
-  overflow: hidden;
-}
-body section.works .card.delivery .card_body img {
-  max-width: 100%;
-}
-body section.works .card .card_title {
-  color: rgba(255, 255, 255, 0.6);
-  font-family: "Ubuntu", sans-serif;
-  font-size: 35px;
-}
-body section.works .card.all_projects_link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: underline;
-  font-size: 24px;
-  margin-top: 20px;
-}
-body section.works .card.all_projects_link a {
-  color: #4fffa0;
-}
-body section.testimonial {
-  padding: 20px 20px;
-  font-family: "Ubuntu", sans-serif;
-}
-body section.testimonial .hr_lable {
-  margin-left: 20px;
-  margin-top: -20px;
-}
-body section.testimonial .comment_preview {
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 20px;
-  border-radius: 12px;
-  background: #1c1d22;
-  padding: 30px;
-}
-body section.testimonial .comment_preview .rating .stars {
-  color: #4fffa0;
-  margin-right: 10px;
-}
-body section.testimonial .comment_preview .rating .r_val {
-  color: rgba(255, 255, 255, 0.4);
-}
-body section.testimonial .comment_preview p.preview {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 14px;
-  font-style: italic;
-}
-body section.testimonial .comment_preview .icon {
-  font-size: 30px;
-  color: #26272d;
-  position: absolute;
-  right: 20px;
-}
-body section.testimonial .clients {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-}
-body section.testimonial .clients .item {
-  width: 100px;
-  height: 60px;
-  display: flex;
-  border-bottom: 1px solid #1c1d22;
-}
-body section.testimonial .clients .item.active {
-  border-bottom: 1px solid #4fffa0;
-}
-body section.testimonial .clients .item .avatar {
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  background-size: cover;
-  margin-right: 10px;
-}
-body section.testimonial .clients .item .user_info .user_name {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
-}
-body section.testimonial .clients .item .user_info .desc {
-  font-size: 8px;
-  color: rgba(255, 255, 255, 0.4);
-}
-body section.testimonial .sponsors {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-body section.testimonial .sponsors .item {
-  margin: 20px;
-  width: 100px;
-}
-body section.testimonial .sponsors .item img {
-  max-width: 100%;
-}
 body section.news {
   padding: 20px;
   font-family: "Ubuntu", sans-serif;
@@ -749,10 +871,10 @@ body section.news .flex_content {
   overflow-x: scroll;
 }
 body section.news .hr_lable hr {
-  height: 4px;
+  display: none;
 }
 body section.news .hr_lable span {
-  font-size: 34px;
+  font-size: 24px;
   color: rgba(255, 255, 255, 0.8);
 }
 body section.news .card {
@@ -782,119 +904,6 @@ body section.news .card a {
   float: right;
   text-decoration: underline;
   font-size: 14px;
-}
-body footer {
-  width: 100%;
-  background: #1c1d22;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-family: "Ubuntu", sans-serif;
-  padding: 20px;
-}
-body footer .bottom {
-  width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-}
-body footer .bottom span {
-  font-size: 34px;
-  color: #4fffa0;
-}
-body footer .bottom p {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
-}
-body footer .bottom .copy {
-  color: #000;
-  font-size: 14px;
-}
-body footer .main-container .title {
-  text-align: center;
-  font-size: 34px;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 20px;
-}
-body footer .main-container .footer_content {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-body footer .main-container .right {
-  font-size: 28px;
-  color: rgba(255, 255, 255, 0.6);
-}
-body footer .main-container .right a {
-  color: #4fffa0;
-  text-decoration: underline;
-  font-size: 18px;
-  text-align: center;
-  margin: 0 auto;
-}
-body footer .main-container .right .social-media {
-  margin-top: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-body footer .main-container .right .social-media .item {
-  width: 60px;
-  height: 60px;
-  border-radius: 60px;
-  background: #111;
-}
-body footer .main-container .medium .label {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 24px;
-  margin-bottom: 15px;
-}
-body footer .main-container .medium a {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 18px;
-  display: block;
-  margin-left: 40px;
-}
-body footer .main-container .medium a:first-of-type::before {
-  content: "-->";
-  display: block;
-  position: absolute;
-  margin-left: -35px;
-  color: #4fffa0;
-}
-body footer .main-container .left {
-  margin-bottom: 10px;
-}
-body footer .main-container .left .item {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  background: #24262d;
-  border: 6px solid #202126;
-  box-sizing: border-box;
-  border-radius: 60px;
-  margin-bottom: 10px;
-  padding-right: 20px;
-}
-body footer .main-container .left .item .icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  background: #31333d;
-  color: #4fffa0;
-  font-size: 24px;
-}
-body footer .main-container .left .item span {
-  margin-left: 20px;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 18px;
-}
-body footer .main-container .hr {
-  display: none;
 }
 body section.cover img,
 body .logo,

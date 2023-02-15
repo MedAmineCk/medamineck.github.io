@@ -1,0 +1,125 @@
+section.cover {
+    background-color: colors(bg);
+    // background-image: url(../img/pattern.svg);
+    background-size: contain;
+    width: 100%;
+    height: 100vh;
+    max-height: 560px;
+    color: white;
+    padding: 100px 20px 0 20px;
+    display: block;
+
+    .container {
+        position: relative;
+        z-index: 2;
+
+        h1 {
+            font-family: $Ubuntu;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 50px;
+            color: whites(0.8);
+
+            span {
+                background: $gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+
+        p {
+            font-family: $Ubuntu;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 24px;
+            color: whites(0.6);
+            max-width: 350px;
+        }
+
+        .btns {
+            display: flex;
+            margin-top: 60px;
+            align-items: center;
+            flex-wrap: wrap;
+
+            button {
+                $height: 45px;
+                height: $height;
+                border-radius: $height;
+                background-color: colors(bg);
+                box-shadow: $shadow;
+                padding: 10px 20px;
+                color: colors(sec);
+                font-family: $Varela;
+                margin-right: 20px;
+                margin-bottom: 20px;
+            }
+
+            a {
+                color: colors(sec);
+                font-family: $Varela;
+                display: flex;
+                margin-bottom: 20px;
+
+                .icon {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    .experiance {
+        position: absolute;
+        $height: 60px;
+        height: $height;
+        bottom: -$height/2;
+        display: flex;
+
+        .exp_years {
+            $width: 140px;
+            width: $width;
+            background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 100%);
+            border-radius: 4px;
+            padding: 10px;
+            font-family: $Ubuntu;
+            position: relative;
+
+            .border {
+                border: 2px dashed white;
+                height: $height - 10px;
+                width: $width - 10px;
+                position: absolute;
+            }
+
+            .num_years {
+                font-size: 34px;
+                font-weight: bolder;
+                margin-right: 10px;
+            }
+
+            .label {
+                font-size: 12px;
+            }
+        }
+
+        .exp_projects {
+            font-family: $Ubuntu;
+            display: flex;
+            color: #67686c;
+            height: $height/2;
+            display: flex;
+            margin-left: 10px;
+
+            .num_project {
+                font-size: 24px;
+                font-weight: bolder;
+                margin-right: 10px;
+            }
+
+            .label {
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+    }
+}

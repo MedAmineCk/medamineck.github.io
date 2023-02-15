@@ -4,7 +4,7 @@
 hr {
   height: 1px;
   background: whites(0.4);
-  border: none
+  border: none;
 }
 
 .titel_label {
@@ -40,8 +40,8 @@ hr {
   &.testimonial_tt {
     &::before {
       content: "T";
-      left: -28px;
-      bottom: -154px;
+      left: -4px;
+      bottom: -60px;
       margin-left: -16px;
     }
   }

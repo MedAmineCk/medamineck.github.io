@@ -815,6 +815,9 @@ section.works .card {
   font-family: "Ubuntu", sans-serif;
   cursor: pointer;
 }
+section.works .card.desktop-hide {
+  display: none !important;
+}
 section.works .card img {
   max-width: 100%;
 }
