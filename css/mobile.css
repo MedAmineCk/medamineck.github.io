@@ -262,7 +262,7 @@ header nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(38, 39, 45, 0.9137254902);
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
 }
@@ -273,7 +273,6 @@ header nav a {
   margin-bottom: 35px;
   position: relative;
   color: rgba(255, 255, 255, 0.8);
-  opacity: 0.8;
   font-size: 24px;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
