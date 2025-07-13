@@ -1,0 +1,259 @@
+section.works {
+    padding-top: 100px;
+    @include mobile {
+        padding: 20px 0;
+    }
+
+    .flex_content {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: -223px;
+        // flex-direction: row-reverse;
+        @include mobile {
+            margin-top: 0;
+            gap: 20px;
+        }
+    }
+
+    .card {
+        width: 450px;
+        height: fit-content;
+        min-height: 300px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        margin: 25px;
+        padding: 20px;
+        position: relative;
+        font-family: $Ubuntu;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &.desktop-hide {
+            display: none !important;
+        }
+
+        @include mobile {
+            position: static !important;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 12px;
+            margin: 0;
+            padding: 20px;
+            font-family: $Ubuntu;
+            cursor: pointer;
+            &.mobile-hide {
+                display: none !important;
+            }
+
+            &.desktop-hide {
+                display: flex !important;
+                height: 100px;
+            }
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            @include mobile {
+                display: none;
+            }
+        }
+
+        &:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                0 0 50px rgba(255, 107, 157, 0.2);
+
+            &::before {
+                opacity: 1;
+            }
+
+            .card_body img {
+                transform: scale(1.05);
+            }
+
+            .langs .item {
+                transform: translateY(-2px);
+            }
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .card_header {
+            display: flex;
+            margin-bottom: 20px;
+            @include mobile() {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card_title {
+                color: #ffffff;
+                font-family: $Ubuntu;
+                font-size: 1.5rem;
+                font-weight: 600;
+                flex: 1;
+                margin-right: 20px;
+                background: linear-gradient(135deg, #ffffff, #e0e0e0);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+
+                @include mobile() {
+                    font-size: 28px;
+                    margin-right: 0;
+                }
+            }
+
+            .langs {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                max-width: 200px;
+                justify-content: flex-end;
+
+                @include mobile() {
+                    max-width: 100%;
+                    justify-content: center;
+                    gap: 4px;
+                    margin-top: 8px;
+                }
+
+                .item {
+                    background: rgba(255, 255, 255, 0.1);
+                    color: #ffffff;
+                    padding: 6px 12px;
+                    border-radius: 20px;
+                    font-size: 0.75rem;
+                    font-weight: 500;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    transition: all 0.3s ease;
+                    backdrop-filter: blur(10px);
+                    @include mobile() {
+                        font-size: 12px;
+                        padding: 4px 8px;
+                    }
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.2);
+                        border-color: rgba(255, 255, 255, 0.4);
+                    }
+                }
+            }
+        }
+
+        .card_body {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            background: rgba(0, 0, 0, 0.3);
+
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+                transition: transform 0.4s ease;
+                filter: brightness(0.9) contrast(1.1);
+            }
+        }
+
+        // Specific card styling
+        &.delivery {
+            background: linear-gradient(135deg, rgba(142, 147, 125, 0.2), rgba(162, 167, 145, 0.1));
+            border-color: rgba(142, 147, 125, 0.3);
+            top: 190px;
+
+            &:hover {
+                box-shadow:
+                    0 20px 40px rgba(0, 0, 0, 0.3),
+                    0 0 50px rgba(142, 147, 125, 0.4);
+            }
+        }
+
+        &.blog {
+            background: linear-gradient(135deg, rgba(120, 91, 104, 0.2), rgba(140, 111, 124, 0.1));
+            border-color: rgba(120, 91, 104, 0.3);
+
+            &:hover {
+                box-shadow:
+                    0 20px 40px rgba(0, 0, 0, 0.3),
+                    0 0 50px rgba(120, 91, 104, 0.4);
+            }
+        }
+
+        &.callCenter {
+            background: linear-gradient(135deg, rgba(91, 131, 144, 0.2), rgba(111, 151, 164, 0.1));
+            border-color: rgba(91, 131, 144, 0.3);
+
+            &:hover {
+                box-shadow:
+                    0 20px 40px rgba(0, 0, 0, 0.3),
+                    0 0 50px rgba(91, 131, 144, 0.4);
+            }
+        }
+
+        &.all_projects_link {
+            border: 2px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            top: 190px;
+            @include mobile() {
+                height: 100px;
+                min-height: 100px;
+            }
+
+            a {
+                color: #ffffff;
+                font-size: 2rem;
+                font-weight: 600;
+                text-decoration: none;
+                position: relative;
+                z-index: 2;
+                transition: all 0.3s ease;
+                @include mobile() {
+                    font-size: 24px;
+                }
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow:
+                    0 15px 30px rgba(0, 0, 0, 0.3),
+                    0 0 40px rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        .card_title {
+            color: whites(0.6);
+            font-family: $Ubuntu;
+            font-size: 24px;
+        }
+    }
+}

@@ -15,6 +15,14 @@ hr {
   margin-left: 100px;
   margin-bottom: 40px;
   position: relative;
+  font-weight: bolder;
+
+  @include mobile() {
+    font-size: 34px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+  }
 
   &::before {
     content: "About";
@@ -23,6 +31,10 @@ hr {
     font-weight: bold;
     position: absolute;
     bottom: -30px;
+    @include mobile() {
+      font-size: 100px;
+      bottom: -16px;
+    }
   }
 
   &.about_tt {
@@ -82,5 +94,63 @@ aside {
 
   hr {
     width: 50px;
+  }
+}
+
+.btns {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+
+  @include mobile() {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  a {
+    $height: 60px;
+    border-radius: 8px;
+    background: linear-gradient(to right, #00ffc3, #00ff94);
+    color: #0d0d11;
+    padding: 20px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+    animation: pulseGlow 3s infinite;
+
+    @include mobile {
+      width: 100%;
+      font-size: 14px;
+      padding: 15px 20px;
+    }
+
+    &#cv {
+      background: colors(full_bg) !important;
+      box-shadow: $shadow;
+      color: #00ff94;
+      border: 2px solid #00ff94;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      animation-play-state: paused;
+      box-shadow:
+        0 0 20px rgba(0, 255, 196, 0.8),
+        0 0 40px rgba(0, 255, 196, 0.5),
+        inset 0 3px 6px rgba(255, 255, 255, 0.1);
+    }
+
+    .icon {
+      font-size: 1.25rem;
+    }
   }
 }

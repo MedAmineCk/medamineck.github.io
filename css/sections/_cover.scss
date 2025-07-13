@@ -1,63 +1,135 @@
 section.cover {
     $padding_left: 140px;
-    background: colors(bg);
+    $padding_bottom: 140px;
+    $mobile_padding_bottom: 100px;
+    padding: 180px 140px $padding_bottom $padding_left;
     width: 100%;
-    height: 100vh;
-    max-height: 650px;
-    padding: 180px 140px 0 $padding_left;
+    height: fit-content;
     color: white;
+    position: relative;
+
+    @include mobile {
+        padding: 120px 0 $mobile_padding_bottom 0;
+    }
 
     .container {
         position: relative;
         z-index: 2;
 
-        h1 {
-            font-family: $Ubuntu;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 72px;
-            color: whites(0.8);
+        .flex-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
 
-            span {
+            @include mobile {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+            }
+        }
+
+        .profile-container {
+            $size: 120px;
+            width: $size;
+            height: $size;
+            border-radius: $size;
+            background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);
+            padding: 8px;
+            position: relative;
+
+            @include mobile {
+                $size: 120px;
+                width: $size;
+                height: $size;
+                border-radius: $size;
+            }
+
+            &:before {
+                content: "";
+                display: block;
+                background-image: url(../img/profile-v2.png);
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-position: center;
+                border-radius: 50%;
+            }
+        }
+
+        h1,
+        #typed-heading {
+            font-family: $Ubuntu;
+            font-weight: bold;
+            font-size: 80px;
+            color: whites(0.8);
+            line-height: 1.2;
+
+            @include mobile {
+                font-size: 36px;
+            }
+
+            span,
+            .highlighted-text {
                 background: $gradient;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
+
+            .cursor {
+                margin-left: 6px;
+                color: #00ffc3;
+                animation: blink 0.7s step-start infinite;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
 
         p {
-            font-family: $Ubuntu;
-            font-style: normal;
-            font-weight: 300;
-            font-size: 32px;
-            color: whites(0.6);
-        }
+            margin-bottom: 20px;
+            &.hero-title {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: #ccc;
+                margin-top: 1rem;
+                line-height: 1.8;
 
-        .btns {
-            display: flex;
-            margin-top: 60px;
-            align-items: center;
-
-            button {
-                $height: 45px;
-                height: $height;
-                border-radius: $height;
-                background-color: colors(bg);
-                box-shadow: $shadow;
-                padding: 10px 20px;
-                color: colors(sec);
-                font-family: $Varela;
-                margin-right: 40px;
+                @include mobile {
+                    font-size: 1.125rem;
+                }
             }
 
-            a {
-                color: colors(sec);
-                font-family: $Varela;
-                display: flex;
+            .highlight {
+                color: #00ffc3;
+                font-weight: bold;
+            }
 
-                .icon {
-                    margin-right: 15px;
+            .break-space {
+                display: block;
+                margin-bottom: 1rem;
+            }
+
+            &.hero-subtitle {
+                font-size: 1.125rem;
+                color: #aaa;
+                margin-top: 2rem;
+                max-width: 700px;
+                line-height: 1.6;
+
+                @include mobile {
+                    font-size: 1rem;
                 }
+            }
+
+            .highlight {
+                font-weight: bold;
+                display: inline-block;
+                position: relative;
+                padding: 0 0.1em;
+                z-index: 0;
             }
         }
     }
@@ -70,29 +142,10 @@ section.cover {
         right: 0;
         bottom: 0;
 
-        .bg_img {
-            width: 80%;
-            height: 80%;
-            border-radius: 50%;
-            background-image: url(../img/profile.png);
-            background-size: cover;
-            background-position: center;
-            &:after {
-                content: "";
-                width: 101%;
-                height: 101%;
-                background: #000;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                -webkit-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-                border-radius: 50%;
-                background: radial-gradient(50% 50% at 50% 50%, rgba(38, 39, 45, 0.76) 0%, #26272d 100%);
-            }
-        }
-
         .patern {
+            @include mobile {
+                display: none;
+            }
             .icon {
                 $size: 80px;
                 width: $size;
@@ -230,17 +283,29 @@ section.cover {
                 }
             }
         }
+
+        @include mobile {
+            width: 300px;
+            height: 300px;
+        }
     }
 
     .experiance {
         position: absolute;
         $height: 100px;
+        $mobile_height: 60px;
         height: $height;
-        bottom: -$height/2;
+        bottom: -$padding_bottom - $height / 2;
         display: flex;
+
+        @include mobile() {
+            height: $mobile_height;
+            bottom: -$mobile_padding_bottom - $mobile_height / 2;
+        }
 
         .exp_years {
             $width: 240px;
+            $mobile_width: 140px;
             width: $width;
             background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 100%);
             border-radius: 4px;
@@ -248,9 +313,18 @@ section.cover {
             font-family: $Ubuntu;
             position: relative;
 
+            @include mobile() {
+                width: $mobile_width;
+                padding: 10px;
+            }
+
             .border {
                 height: $height - 5px;
                 width: $width - 5px;
+                @include mobile() {
+                    height: $mobile_height;
+                    width: $mobile_width;
+                }
                 position: absolute;
                 & > div {
                     position: absolute;
@@ -267,15 +341,24 @@ section.cover {
                         100% {
                             background: #ffffff;
                             box-shadow: 0px 0px 4px 4px rgba(255, 255, 255, 0.8);
+                            @include mobile() {
+                                box-shadow: 0px 0px 2px 2px rgba(255, 255, 255, 0.8);
+                            }
                         }
                     }
                 }
                 .light {
                     $size: 10px;
+                    $mobile_size: 4px;
                     width: $size;
                     height: $size;
                     background: #dcdcdc;
                     border-radius: $size;
+                    @include mobile() {
+                        width: $mobile_size;
+                        height: $mobile_size;
+                        border-radius: $mobile_size;
+                    }
                 }
                 .top,
                 .bottom {
@@ -311,6 +394,9 @@ section.cover {
             .num_years {
                 font-size: 65px;
                 font-weight: bolder;
+                @include mobile() {
+                    font-size: 34px;
+                }
             }
 
             .label {
@@ -318,6 +404,9 @@ section.cover {
                 font-weight: 400;
                 opacity: 1;
                 color: #fff;
+                @include mobile() {
+                    font-size: 16px;
+                }
             }
 
             .num_years,
@@ -332,19 +421,26 @@ section.cover {
             color: #67686c;
             height: $height/2;
             display: flex;
-            margin-left: 20px;
+            align-items: center;
+            margin-left: 10px;
+            gap: 20px;
+
+            @include mobile() {
+                gap: 10px;
+            }
 
             .num_project,
             .label {
                 font-size: 65px;
                 font-weight: bolder;
-                margin-right: 20px;
+                @include mobile() {
+                    font-size: 34px;
+                }
             }
 
             .label {
                 color: #67686c;
                 font-size: 24px;
-                margin-bottom: -34px;
             }
         }
     }

@@ -1,141 +1,348 @@
 section.about {
-    font-family: $Ubuntu;
-    .flex_content {
+    @include mobile {
+        // display: none;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax values as needed */
+        gap: 40px;
+        @include mobile {
+            grid-template-columns: 1fr; /* Switch to single column layout on mobile */
+            gap: 20px;
+        }
+    }
+
+    .section-label {
         display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 32px;
+        position: relative;
 
-        .what_i_do {
-            .card {
-                background: colors(bg);
-                padding: 20px;
-                border-radius: 4px;
-                line-height: 38px;
-                margin-bottom: 10px;
-                margin-right: 20px;
-                cursor: pointer;
+        hr {
+            flex: 1;
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
 
-                &.active,
-                &:hover {
-                    .card_header {
-                        color: colors(sec);
-                    }
-                }
+        span {
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 2px;
+            font-weight: 500;
+            @include mobile {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                // font-size: 12px;
+                text-align: center;
+                background: var(--primary-bg);
+                padding: 0 10px;
+                border-radius: 8px;
+                width: fit-content;
+                z-index: 1;
+            }
+        }
+    }
+}
 
-                .card_header {
-                    display: flex;
-                    justify-content: space-between;
-                    $fontSize: 24px;
-                    font-size: $fontSize;
-                    color: whites(0.8);
+.what_i_do {
+    .hr_lable {
+        margin-bottom: 12px;
+    }
 
-                    .icon {
-                        $size: 35px;
-                        width: $size;
-                        height: $size;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
-                }
+    .card {
+        background: colors(bg);
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+        position: relative;
 
-                .card_body {
-                    margin-bottom: 20px;
-                    p {
-                        color: whites(0.6);
-                        line-height: 26px;
-                        font-weight: normal;
-                    }
-                }
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            padding: 2px; // border thickness
+            border-radius: 12px;
+            background: $gradient;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
 
-                .card_tools {
-                    .tools {
-                        display: flex;
-                        margin-bottom: 20px;
-                        .label {
-                            $size: 35px;
-                            width: fit-content;
-                            height: 35px;
-                            background: #000;
-                            border-radius: $size;
-                            display: flex;
-                            align-items: center;
-                            padding-right: 20px;
-                            margin-right: 20px;
-                            .icon {
-                                width: $size;
-                                height: $size;
-                                border-radius: $size;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                .dote {
-                                    $size: $size/2;
-                                    width: $size;
-                                    height: $size;
-                                    border-radius: $size;
-                                    background: #4fffa0;
-                                }
-                            }
-                            span {
-                                color: #fff;
-                            }
-                        }
-                        .tags-container {
-                            display: flex;
-                            flex-wrap: wrap;
-                            gap: 20px;
-                            .tag {
-                                width: fit-content;
-                                height: 35px;
-                                border-radius: 4px;
-                                color: #000;
-                                background: #d9d9d9;
-                                padding: 10px;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                            }
-                        }
-                    }
-                }
-                a {
-                    text-decoration: underline;
-                    color: #03a9f4;
-                }
+        &:hover,
+        &.active {
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, rgba(229, 46, 113, 0.1) 0%, rgba(0, 255, 204, 0.05) 100%);
+            .icon {
+                color: colors(sec);
+            }
+            .card_title {
+                font-weight: 900;
+                background: $gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         }
 
-        .introduce {
-            .title {
-                color: whites(0.8);
-                font-size: 40px;
-            }
+        &.special {
+            position: relative;
 
-            .min_title {
-                color: whites(0.6);
-                font-size: 25px;
-                font-style: italic;
-                margin-top: 20px;
+            .badge-specialty {
+                position: absolute;
+                top: 60px;
+                left: -60px;
+                transform: rotate(-90deg);
+                background: linear-gradient(90deg, #ff8a00, #e52e71);
+                color: #fff;
+                font-size: 12px;
+                padding: 5px 10px;
+                border-radius: 8px 8px 0 0;
+                font-weight: 600;
+                box-shadow: 0 0 10px rgba(229, 46, 113, 0.4);
+                z-index: 2;
+                font-family:
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    Roboto,
+                    Oxygen,
+                    Ubuntu,
+                    Cantarell,
+                    "Open Sans",
+                    "Helvetica Neue",
+                    sans-serif;
             }
+        }
 
-            p {
-                color: whites(0.4);
-                font-size: 20px;
-                line-height: 36px;
-                margin-top: 10px;
-            }
-
-            button {
-                background: linear-gradient(
-                    90deg,
-                    rgba(106, 108, 119, 0) 0%,
-                    #2d2e32 48.96%,
-                    rgba(106, 108, 119, 0) 100%
-                );
-                color: whites(0.6);
-                padding: 10px 25px;
-                float: right;
-                text-decoration: underline;
+        .card_header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 22px;
+            color: whites(0.8);
+            @include mobile {
                 font-size: 18px;
+            }
+
+            .flex {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+
+            .icon {
+                font-size: 28px;
+                @include mobile {
+                    font-size: 24px;
+                }
+            }
+
+            .card_title {
+                font-weight: 900;
+            }
+        }
+
+        .card_body p {
+            color: whites(0.6);
+            line-height: 26px;
+            margin-top: 10px;
+            font-weight: 400;
+            @include mobile {
+                font-size: 16px;
+            }
+        }
+
+        .flex-container {
+            margin-top: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            @include mobile {
+                flex-direction: column-reverse;
+                gap: 10px;
+            }
+
+            a {
+                color: colors(sec);
+                white-space: nowrap;
+                text-decoration: none;
+                background: rgba(21, 255, 0, 0.1);
+                border: 1px solid rgba(21, 255, 0, 0.1);
+                padding: 4px 12px;
+                border-radius: 16px;
+                @include mobile {
+                    font-size: 12px;
+                }
+            }
+
+            .tags-container {
+                display: flex;
+                justify-content: end;
+                flex-wrap: wrap;
+                gap: 8px;
+                @include mobile {
+                    justify-content: center;
+                }
+
+                .tag {
+                    background: rgba(255, 255, 255, 0.1);
+                    color: rgba(255, 255, 255, 0.8);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    padding: 4px 12px;
+                    border-radius: 16px;
+                    font-size: 12px;
+                    @include mobile {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+$blur-bg: rgba(20, 25, 35, 0.9);
+$border: rgba(255, 255, 255, 0.1);
+$highlight: #00ff88;
+$secondary: #e52e71;
+$warning: #ff6b35;
+$yellow: #f9ca24;
+$white: #fff;
+
+.introduce {
+    @include mobile {
+        text-align: center;
+    }
+    .introduce-header {
+        margin-bottom: 24px;
+    }
+
+    .introduce-name {
+        font-size: 32px;
+        font-weight: 700;
+        background: $gradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 8px;
+        @include mobile {
+            font-size: 24px;
+            text-align: center;
+        }
+    }
+
+    .introduce-title {
+        font-size: 18px;
+        color: rgba($white, 0.8);
+        font-weight: 400;
+        margin-bottom: 20px;
+        @include mobile {
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+    .value-prop {
+        background: linear-gradient(135deg, rgba($highlight, 0.1) 0%, rgba($secondary, 0.1) 100%);
+        border: 1px solid rgba($highlight, 0.3);
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 24px;
+        position: relative;
+
+        &-title {
+            color: $highlight;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: rgba($white, 0.8);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+    }
+
+    .intro-description {
+        color: rgba($white, 0.7);
+        line-height: 1.7;
+        margin-bottom: 24px;
+        font-size: 16px;
+    }
+
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 32px;
+
+        .metric-card {
+            background: linear-gradient(135deg, rgba($secondary, 0.1) 0%, rgba($warning, 0.1) 100%);
+            border: 1px solid rgba($secondary, 0.2);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+
+            .metric-number {
+                font-size: 24px;
+                font-weight: 700;
+                color: $secondary;
+                display: block;
+            }
+
+            .metric-label {
+                font-size: 12px;
+                color: rgba($white, 0.6);
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-top: 4px;
+            }
+        }
+    }
+
+    .specialties {
+        margin-bottom: 32px;
+
+        &-title {
+            color: rgba($white, 0.8);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        &-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            @include mobile {
+                justify-content: center;
+            }
+
+            .specialty-tag {
+                background: rgba(255, 255, 255, 0.1);
+                color: rgba(255, 255, 255, 0.8);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                color: $white;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: 500;
             }
         }
     }

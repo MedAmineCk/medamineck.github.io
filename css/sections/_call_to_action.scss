@@ -1,0 +1,49 @@
+/* CTA Section */
+.cta-section {
+    @include mobile {
+        // display: none;
+    }
+    padding: 120px 0;
+    background: linear-gradient(135deg, rgba(255, 59, 148, 0.03), rgba(0, 255, 136, 0.03));
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    @include mobile {
+        padding: 40px 0;
+    }
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--accent-pink), var(--accent-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+    @include mobile {
+        font-size: 24px;
+    }
+}
+
+.cta-description {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    line-height: 1.7;
+    @include mobile {
+        font-size: 18px;
+    }
+}
+
+.btns {
+    justify-content: center;
+}

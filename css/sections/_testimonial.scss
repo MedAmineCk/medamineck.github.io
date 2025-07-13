@@ -1,20 +1,42 @@
 section.testimonial {
     padding-top: 10px;
-    font-family: $Ubuntu;
+    @include mobile {
+        padding-top: 10px;
+    }
+
+    .titel_label::before {
+        @include mobile {
+            font-size: 100px;
+            bottom: -16px;
+            left: -10px;
+        }
+    }
 
     .hr_lable {
         margin-left: 134px;
         margin-top: -40px;
+
+        @include mobile {
+            margin-left: 20px;
+            margin-top: -20px;
+        }
     }
 
     .comment_preview {
-        width: 1000px;
+        width: 100%;
+        max-width: 800px;
         margin: 0 auto;
         margin-top: 20px;
         min-height: 300px;
         border-radius: 12px;
-        background: colors(full_bg);
+        // background: colors(full_bg);
+        background: linear-gradient(135deg, rgba(229, 46, 113, 0.1) 0%, rgba(0, 255, 204, 0.05) 100%);
         padding: 40px;
+        position: relative;
+
+        @include mobile {
+            padding: 20px;
+        }
 
         .rating {
             .stars {
@@ -28,19 +50,35 @@ section.testimonial {
         }
 
         p.preview {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: whites(0.6);
-            font-size: 24px;
-            font-style: italic;
+            color: whites(0.8);
+            font-size: 18px;
+            font-weight: 500;
+            font-style: normal;
+            line-height: 1.7;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            position: relative;
+            z-index: 1;
+            @include mobile {
+                font-size: 16px;
+                padding: 12px 16px;
+            }
         }
 
         .icon {
             font-size: 100px;
             color: colors(bg);
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 0;
+            @include mobile {
+                font-size: 60px;
+                right: 10px;
+                top: 10px;
+            }
         }
     }
 
@@ -49,6 +87,9 @@ section.testimonial {
         justify-content: center;
         margin-top: 40px;
         cursor: pointer;
+        @include mobile {
+            margin-top: 20px;
+        }
 
         .item {
             width: 330px;
@@ -56,6 +97,10 @@ section.testimonial {
             $size: 60px;
             display: flex;
             border-bottom: 1px solid colors(full_bg);
+            @include mobile {
+                width: 100%;
+                height: 60px;
+            }
 
             &.active {
                 border-bottom: 1px solid colors(sec);
@@ -67,33 +112,72 @@ section.testimonial {
                 border-radius: $size;
                 background-size: cover;
                 margin-right: 10px;
+                @include mobile {
+                    width: 50px;
+                    min-width: 50px;
+                    height: 50px;
+                    min-height: 50px;
+                }
             }
 
             .user_info {
                 .user_name {
                     font-size: 18px;
                     color: whites(0.6);
+                    @include mobile {
+                        font-size: 14px;
+                    }
                 }
 
                 .desc {
                     font-size: 14px;
                     color: whites(0.4);
+                    @include mobile {
+                        font-size: 12px;
+                    }
                 }
             }
         }
     }
 
     .sponsors {
-        width: 1000px;
+        width: 100%;
+        max-width: 900px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
         margin: 0 auto;
         margin-top: 80px;
+        padding: 40px 0;
+        @include mobile {
+            padding: 20px 0;
+            margin-top: 0;
+        }
 
         .item {
             margin: 20px;
+            opacity: 0.6;
+            transition: opacity 0.3s ease;
+            width: 120px;
+            @include mobile {
+                margin: 10px;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 60px;
+                filter: grayscale(100%);
+                transition: filter 0.3s ease;
+
+                &:hover {
+                    filter: grayscale(0%);
+                }
+            }
         }
     }
 }

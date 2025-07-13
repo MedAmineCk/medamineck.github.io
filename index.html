@@ -1,33 +1,84 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
+  <meta property="og:title" content="" />
+  <meta property="og:type" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
 
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="apple-touch-icon" href="icon.png" />
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/main.css" />
 
-  <link rel="stylesheet" href="css/style.css" media="screen and (min-width: 768px)">
-  <link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 767px)">
+  <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous" />
 
-  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#fafafa" />
 </head>
 
 <body>
+  <!-- WhatsApp Floating Button -->
+  <div class="whatsapp-trigger" id="whatsappTrigger">
+    <div class="btn-container">
+      <div class="label animate__animated"></div>
+      <div class="icon-container main-btn"></div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Chat Pop-up -->
+  <div class="whatsapp-popup" id="whatsappPopup">
+    <div class="chat-header">
+      <div class="profile-info">
+        <div class="profile-picture">
+          <img src="/img/profile.png" alt="Med Amine Ck" id="profileImg" />
+          <div class="online-indicator"></div>
+        </div>
+        <div class="profile-details">
+          <h3>Med Amine Ck</h3>
+          <!-- <p>+212 6 2010 8495</p> -->
+          <div class="contact-number">
+            <a href="https://wa.me/212620108495" target="_blank" class="cta-phone">+212 6 2010 8495</a>
+          </div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <div class="whatsapp-logo">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"
+              fill="currentColor" />
+          </svg>
+        </div>
+        <button class="close-btn" id="closeBtn">×</button>
+      </div>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <!-- Messages will be dynamically added here -->
+    </div>
+
+    <div class="chat-footer">
+      <form class="message-form" id="messageForm">
+        <input type="text" id="messageInput" placeholder="Type something here..." autocomplete="off" />
+        <button type="submit" class="send-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+
   <header>
     <div class="main-container">
       <div class="nav_tab_icon">
@@ -36,9 +87,7 @@
         <div class="item"></div>
       </div>
       <div class="logo">
-        <span>MACK</span>
-        <br>
-        <span>Full-Stack Dev</span>
+        <img src="/img/CK-logo.svg" height="40px" />
       </div>
       <nav>
         <a href="/" class="active">Hi</a>
@@ -77,24 +126,58 @@
   </header>
 
   <main>
-
     <section class="cover" id="cover">
       <div class="main-container">
-        <aside>
-          <hr>
-          <div class="label">Home Page</div>
-        </aside>
         <div class="container">
-          <p>Hi There</p>
-          <h1>I’m <span>Med Amine CK</span></h1>
-          <p>A Professional FullStack Developer & UI/UX Designer</p>
+          <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+          </div>
+          <div class="flex-container">
+            <div class="profile-container"></div>
+            <h1 id="typed-heading">
+              I’m <span class="highlighted-text"></span><span class="cursor">|</span>
+            </h1>
+          </div>
+
+          <!-- ✅ HTML -->
+          <p class="hero-title">
+            <span id="dev" class="highlight">Full-Stack Developer</span> &
+            <span id="uiux" class="highlight">UI/UX Designer</span>
+            <span class="break-space"></span>
+
+            delivering <span id="code" class="highlight">clean code</span> and
+            <span id="interfaces" class="highlight">elegant interfaces</span>.
+          </p>
+
+          <p class="hero-subtitle">
+            From <span id="mvps" class="highlight">MVPs</span> to
+            <span id="apps" class="highlight">scalable web apps</span>, I help
+            brands and businesses build
+            <span class="break-space"></span>
+            <span id="fast" class="highlight">fast</span>,
+            <span id="functional" class="highlight">functional</span>, and
+            <span id="beautiful" class="highlight">beautiful</span> digital
+            experiences.
+          </p>
+
+
+
           <div class="btns">
-            <button onclick="sendEmail()">LET’S CHAT!</button>
-            <a href="/files/Resume.pdf" download>
+            <a id="cv" href="/files/Resume.pdf" download>
               <div class="icon">
-                <i class="fas fa-cloud-download-alt"></i>
+                <i class="fas fa-file-download"></i>
               </div>
-              Download Resume
+              Download CV
+            </a>
+            <a id="contact" href="mailto:contact@medamineck.com">
+              <div class="icon">
+                <i class="far fa-envelope"></i>
+              </div>
+              GET IN TOUCH NOW
             </a>
           </div>
         </div>
@@ -173,13 +256,11 @@
               </svg>
             </div>
             <div class="icon js" data-color="#F0DB4F">
-
               <svg viewBox="0 0 128 128">
                 <path fill="#83CD29"
                   d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623C42.594 41 41 42.061 41 42.773v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 90.73c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.294 9.294 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.709 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645.991 1.24.991h5.754c.354 0 .692-.143.94-.396.24-.272.367-.613.335-.979-.891-10.568-7.912-15.493-22.112-15.493-12.631 0-20.166 5.334-20.166 14.275 0 9.698 7.497 12.378 19.622 13.577 14.505 1.422 15.633 3.542 15.633 6.395 0 4.955-3.978 7.066-13.309 7.066z">
                 </path>
               </svg>
-
             </div>
             <div class="icon figma" data-color="#a159fe">
               <svg viewBox="0 0 128 128">
@@ -200,7 +281,7 @@
           <div class="exp_years flex_center">
             <div class="border">
               <div class="top">
-                <div class="light" style="opacity: 0;"></div>
+                <div class="light" style="opacity: 0"></div>
                 <div class="light"></div>
                 <div class="light"></div>
                 <div class="light"></div>
@@ -209,7 +290,7 @@
                 <div class="light"></div>
                 <div class="light"></div>
                 <div class="light"></div>
-                <div class="light" style="opacity: 0;"></div>
+                <div class="light" style="opacity: 0"></div>
               </div>
               <div class="right">
                 <div class="light"></div>
@@ -218,7 +299,7 @@
                 <div class="light"></div>
               </div>
               <div class="bottom">
-                <div class="light" style="opacity: 0;"></div>
+                <div class="light" style="opacity: 0"></div>
                 <div class="light"></div>
                 <div class="light"></div>
                 <div class="light"></div>
@@ -227,7 +308,7 @@
                 <div class="light"></div>
                 <div class="light"></div>
                 <div class="light"></div>
-                <div class="light" style="opacity: 0;"></div>
+                <div class="light" style="opacity: 0"></div>
               </div>
               <div class="left">
                 <div class="light"></div>
@@ -236,14 +317,14 @@
                 <div class="light"></div>
               </div>
             </div>
-            <div class="num_years">5</div>
+            <div class="num_years" id="experienceYears">5</div>
             <div class="label">
-              <span>YEARS</span><br>
+              <span>YEARS</span><br />
               <span>EXPERIENCE</span>
             </div>
           </div>
           <div class="exp_projects flex_center">
-            <div class="num_project">12</div>
+            <div class="num_project">+100</div>
             <div class="label">
               <span>PROJECTS</span>
             </div>
@@ -253,134 +334,200 @@
     </section>
 
     <section class="about" id="about">
+      <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+      </div>
       <div class="main-container">
-        <aside>
-          <hr>
-          <div class="label">About Section</div>
-        </aside>
-        <div class="titel_label about_tt">
-          About me
-        </div>
-        <div class="flex_content">
+        <div class="titel_label about_tt">About me</div>
+
+        <div class="container">
+          <!-- LEFT SIDE -->
           <section class="what_i_do">
-            <div class="hr_lable">
-              <hr><span class="label">WHAT I DO</span>
+            <div class="section-label">
+              <hr>
+              <span>WHAT I DO</span>
             </div>
-            <div class="card active" onclick="window.open('/pages/projects.html')">
+
+            <!-- Card Template -->
+            <div class="card active special" onclick="window.open('/pages/projects.html')">
+              <div class="badge-specialty">★ Main Focus</div>
               <div class="card_header">
-                <div class="card_title">Web Development</div>
-                <div class="icon">
-                  <i class="fas fa-code"></i>
+                <div class="flex">
+                  <div class="card_title">Web Development</div>
+                  <span>(Full Stack)</span>
                 </div>
+                <div class="icon"><i class="fas fa-code"></i></div>
               </div>
               <div class="card_body">
                 <p>
-                  As a full stack web developer, I'm skilled in building responsive and dynamic web applications that
-                  meet client needs.
+                  I build fast, responsive, and scalable web apps with clean
+                  code and real impact.
                 </p>
               </div>
-              <div class="card_tools">
-                <div class="tools">
-                  <div class="label">
-                    <div class="icon">
-                      <div class="dote"></div>
-                    </div>
-                    <span>Front-end</span>
-                  </div>
-                  <div class="tags-container">
-                    <div class="tag">HTML</div>
-                    <div class="tag">SCSS</div>
-                    <div class="tag">JQuery</div>
-                  </div>
-                </div>
-                <div class="tools">
-                  <div class="label">
-                    <div class="icon">
-                      <div class="dote"></div>
-                    </div>
-                    <div class="dote"></div>
-                    <span>Back-end</span>
-                  </div>
-                  <div class="tags-container">
-                    <div class="tag">PHP</div>
-                    <div class="tag">MySQL</div>
-                    <div class="tag">AJAX</div>
-                    <div class="tag">API</div>
-                  </div>
+              <div class="flex-container">
+                <a href="/pages/projects.html">60+ projects</a>
+                <div class="tags-container">
+                  <div class="tag">React</div>
+                  <div class="tag">Next.js</div>
+                  <div class="tag">TypeScript</div>
+                  <div class="tag">Tailwind</div>
+                  <div class="tag">SCSS</div>
+                  <div class="tag">PHP</div>
+                  <div class="tag">MySQL</div>
                 </div>
               </div>
-              <a href="/pages/projects.html">10+ projects</a>
             </div>
+
             <div class="card" onclick="window.open('https://www.figma.com/@medamineck')">
               <div class="card_header">
                 <div class="card_title">UI/UX Design</div>
-                <div class="icon">
-                  <i class="fas fa-palette"></i>
-                </div>
+                <div class="icon"><i class="fas fa-pencil-ruler"></i></div>
               </div>
               <div class="card_body">
                 <p>
-                  As a UI/UX designer, I am passionate about creating user-centered designs that are both functional and
-                  visually appealing.
+                  I design clean, conversion-focused UIs that work beautifully
+                  on every screen.
                 </p>
               </div>
-              <div class="card_tools">
-                <div class="tools">
-                  <div class="label">
-                    <div class="icon">
-                      <div class="dote"></div>
-                    </div>
-                    <span>Tools</span>
-                  </div>
-                  <div class="tags-container">
-                    <div class="tag">Figma</div>
-                    <div class="tag">Illustrator</div>
-                    <div class="tag">Adobe XD</div>
-                    <div class="tag">Photoshop</div>
-                  </div>
+              <div class="flex-container">
+                <a href="/pages/projects.html">10+ designs</a>
+                <div class="tags-container">
+                  <div class="tag">Figma</div>
+                  <div class="tag">Illustrator</div>
+                  <div class="tag">Adobe XD</div>
+                  <div class="tag">Photoshop</div>
                 </div>
               </div>
-              <a href="https://www.figma.com/@medamineck">7+ projects</a>
+            </div>
+
+            <div class="card" onclick="window.open('/pages/projects.html')">
+              <div class="card_header">
+                <div class="card_title">Cross-Platform Ecosystem</div>
+                <div class="icon"><i class="fas fa-layer-group"></i></div>
+              </div>
+              <div class="card_body">
+                <p>
+                  I build synced SaaS platforms—web, mobile, desktop, and
+                  extensions.
+                </p>
+              </div>
+              <div class="flex-container">
+                <a href="/pages/projects.html">5+ apps</a>
+                <div class="tags-container">
+                  <div class="tag">Java</div>
+                  <div class="tag">XML</div>
+                  <div class="tag">Flutter</div>
+                  <div class="tag">Chrome Ext</div>
+                  <div class="tag">SaaS</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card" onclick="window.open('/pages/projects.html')">
+              <div class="card_header">
+                <div class="card_title">Automation & Other Tech</div>
+                <div class="icon"><i class="fas fa-robot"></i></div>
+              </div>
+              <div class="card_body">
+                <p>
+                  I build bots, tools, and scripts that save time and automate
+                  work.
+                </p>
+              </div>
+              <div class="flex-container">
+                <a href="/pages/projects.html">10+ projects</a>
+                <div class="tags-container">
+                  <div class="tag">Python</div>
+                  <div class="tag">n8n</div>
+                  <div class="tag">LLMs</div>
+                  <div class="tag">Web3.js</div>
+                  <div class="tag">Electron</div>
+                </div>
+              </div>
             </div>
           </section>
-          <section class="introduce">
-            <div class="hr_lable">
-              <hr><span class="label">INTRODUCE</span>
+
+          <!-- RIGHT SIDE -->
+          <div class="introduce">
+            <div class="section-label">
+              <hr>
+              <span>Introduce</span>
             </div>
-            <div class="title">Mohamed-Amine Chekrouni</div>
-            <div class="min_title">Full Stack developer & Mathematics Teacher</div>
-            <p>
-              I am a Full Stack Developer with a Bachelor's in Mathematics and Computer Science, and industry experience
-              building websites and web applications.
+
+            <div class="introduce-header">
+              <h1 class="introduce-name">Mohamed-Amine Chekrouni</h1>
+              <p class="introduce-title">Full Stack Developer · Product Builder · Math Educator</p>
+            </div>
+
+            <div class="value-prop">
+              <div class="value-prop-title">Your Complete Tech Partner</div>
+              <p>I don't just code—I architect complete digital solutions. From initial concept to production
+                deployment, I handle every layer of your product development journey.</p>
+            </div>
+
+            <p class="intro-description">
+              Whether you're a startup founder with a breakthrough idea, an established business scaling up, or an
+              agency needing reliable development expertise, I deliver end-to-end solutions that convert users, scale
+              efficiently, and drive real business results.
             </p>
-            <p>
-              In addition to my technical skills, I am a Mathematics teacher at
-              the Ministry of Education in Morocco.
-            </p>
-            <p class="mobile-hide">
-              I excel in the front-end, working with HTML, CSS, and JavaScript,
-              and I am skilled in designing/prototyping UIs using Figma and Adobe Illustrator.
-            </p>
-            <p class="mobile-hide">
-              I specialize in
-              JavaScript and have professional experience working with PHP, AJAX, and MySQL. I have experience with
-              React JS and Tailwind CSS, and I am familiar with REST APIs and Tailwind CSS.
-            </p>
-            <a href="/pages/about.html" target="_blank">Read More</a>
-          </section>
+
+            <div class="grads">
+              <div class="specialties-title">
+                <div class="section-label">
+                  <hr>
+                  <span>Graduations</span>
+                </div>
+                <div class="icon">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                Core Expertise
+              </div>
+            </div>
+
+
+
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <span class="metric-number">100+</span>
+                <span class="metric-label">Projects Shipped</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-number">8+</span>
+                <span class="metric-label">Years Experience</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-number">24h</span>
+                <span class="metric-label">Response Time</span>
+              </div>
+              <div class="metric-card">
+                <span class="metric-number">100%</span>
+                <span class="metric-label">Project Success</span>
+              </div>
+            </div>
+
+            <div class="specialties">
+              <div class="specialties-title">Core Expertise</div>
+              <div class="specialties-list">
+                <span class="specialty-tag">MVP Development</span>
+                <span class="specialty-tag">SaaS Platforms</span>
+                <span class="specialty-tag">API Architecture</span>
+                <span class="specialty-tag">UI/UX Design</span>
+                <span class="specialty-tag">Performance Optimization</span>
+                <span class="specialty-tag">Security Implementation</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="works" id="works">
       <div class="main-container">
-        <aside>
-          <hr>
-          <div class="label">Works Station</div>
-        </aside>
-        <div class="titel_label works_tt">
-          Works
-        </div>
+        <div class="titel_label works_tt">Works</div>
         <div class="flex_content">
           <div class="card delivery" onclick="window.open('/pages/projects.html#delivery')">
             <div class="card_header">
@@ -395,7 +542,7 @@
               </div>
             </div>
             <div class="card_body">
-              <img src="img/projects/deliveryPlatform.png" alt="delivery Platform">
+              <img src="img/projects/deliveryPlatform.png" alt="delivery Platform" />
             </div>
           </div>
           <div class="card blog" onclick="window.open('/pages/projects.html#blog')">
@@ -411,11 +558,11 @@
               </div>
             </div>
             <div class="card_body">
-              <img src="img/projects/foodRecipesBlog.png" alt="food Recipes Blog">
+              <img src="img/projects/foodRecipesBlog.png" alt="food Recipes Blog" />
             </div>
           </div>
           <div class="card all_projects_link mobile-hide">
-            <a href=" /pages/projects.html">All Projects</a>
+            <a href="/pages/projects.html">All Projects</a>
           </div>
           <div class="card callCenter" onclick="window.open('/pages/projects.html#callCenter')">
             <div class="card_header">
@@ -427,27 +574,221 @@
               </div>
             </div>
             <div class="card_body">
-              <img src="img/projects/callCenterWebsite.png" alt="call Center Website">
+              <img src="img/projects/callCenterWebsite.png" alt="call Center Website" />
             </div>
           </div>
           <div class="card all_projects_link desktop-hide">
-            <a href=" /pages/projects.html">All Projects</a>
+            <a href="/pages/projects.html">All Projects</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="testimonial" id="testimonial">
+    
+
+    <!-- Projects -->
+    <section class="snippets projects-section">
       <div class="main-container">
-        <aside>
-          <hr>
-          <div class="label">Testimonial Station</div>
-        </aside>
-        <div class="titel_label testimonial_tt">
-          Testimonial
+        <!-- Section Title -->
+        <div class="section-title">
+          <div class="section-content flex-content">
+            <h1 class="section-title-text">
+              <div class="icon">
+                <i class="fab fa-codepen"></i>
+              </div>
+              <span class="highlight">CodePen</span> Projects
+            </h1>
+            <hr>
+            <a href="https://codepen.io/MedAmineCk" class="external-link" target="_blank">
+              <i class="fab fa-codepen"></i>
+              codepen.io/MedAmineCk
+            </a>
+          </div>
         </div>
+
+        <div class="container projects-grid">
+
+          <article class="project-card">
+            <div class="project-preview">
+              <img src="/GIF/3d-cub.gif" alt="Project Preview GIF">
+            </div>
+            <div class="project-info">
+              <div class="flex-content">
+
+                <h3 class="project-title">3D Cube Rotation</h3>
+
+                <div class="project-meta">
+                  <span class="project-date">Oct 24, 2019</span>
+                  <span class="project-type">CSS</span>
+                </div>
+              </div>
+
+              <p class="project-description">
+                Interactive 3D cube with smooth rotation mechanics built using CSS transforms and perspective
+                properties,
+                demonstrating advanced animation techniques.
+              </p>
+              <a href="#" class="project-link">
+                View Project <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview">
+              <img src="/GIF/clock.gif" alt="Project Preview GIF">
+            </div>
+            <div class="project-info">
+              <div class="flex-content">
+                <h3 class="project-title">Functional Clock</h3>
+                <div class="project-meta">
+                  <span class="project-date">Aug 06, 2018</span>
+                  <span class="project-type">JS</span>
+                </div>
+
+              </div>
+
+              <p class="project-description">
+                Real-time digital clock interface with elegant transitions and precise time calculations, featuring
+                modern
+                design patterns and smooth animations.
+              </p>
+              <a href="#" class="project-link">
+                View Project <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview">
+              <img src="/GIF/sunrise.gif" alt="Project Preview GIF">
+            </div>
+            <div class="project-info">
+              <div class="flex-content">
+                <h3 class="project-title">Sunrise & Sunset</h3>
+                <div class="project-meta">
+                  <span class="project-date">Dec 26, 2020</span>
+                  <span class="project-type">SCSS</span>
+                </div>
+              </div>
+
+              <p class="project-description">
+                Animated landscape scene with dynamic day-night cycle transitions, created entirely with SCSS using
+                advanced gradient techniques and keyframe animations.
+              </p>
+              <a href="#" class="project-link">
+                View Project <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- Section Title -->
+        <div class="section-title">
+          <div class="section-content flex-content">
+            <h1 class="section-title-text">
+              <div class="icon">
+                <i class="fab fa-figma"></i>
+              </div>
+              <span class="highlight">Figma</span> Projects
+            </h1>
+            <hr>
+            <a href="figma.com/@medamineck" class="external-link" target="_blank">
+              <i class="fab fa-figma"></i>
+              figma.com/@medamineck
+            </a>
+          </div>
+        </div>
+
+        <div class="container projects-grid">
+          <article class="project-card">
+            <div class="project-preview">
+              <img src="/img/projects/consultingWebsite.png" alt="consulting website design">
+            </div>
+            <div class="project-info">
+              <div class="flex-content">
+                <h3 class="project-title">Consulting Website</h3>
+                <div class="project-meta">
+                  <span class="project-date">Oct 20, 2020</span>
+                </div>
+              </div>
+              <a href="#" class="project-link">
+                View Project <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview">
+              <img src="/img/projects/awningShop.png" alt="Awning Shop website design">
+            </div>
+            <div class="project-info">
+              <div class="flex-content">
+                <h3 class="project-title">Awning Shop Website</h3>
+                <div class="project-meta">
+                  <span class="project-date">Mar 18, 2022</span>
+                </div>
+              </div>
+              <a href="#" class="project-link">
+                View Project <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview">
+              <img src="/img/projects/bookShelf.png" alt="books shelf website design">
+            </div>
+            <div class="project-info">
+              <div class="flex-content">
+                <h3 class="project-title">bookshelf website</h3>
+                <div class="project-meta">
+                  <span class="project-date">Jul 07, 2023</span>
+                </div>
+              </div>
+              <a href="#" class="project-link">
+                View Project <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="main-container">
+        <div class="cta-content">
+          <h2 class="cta-title">Let's Build Something Amazing</h2>
+          <p class="cta-description">
+            Ready to bring your vision to life? I specialize in creating scalable, high-performance applications with
+            exceptional user experiences. Let's discuss your next project.
+          </p>
+          <div class="btns">
+            <a id="cv" href="/files/Resume.pdf" download>
+              <div class="icon">
+                <i class="fas fa-file-download"></i>
+              </div>
+              Download CV
+            </a>
+            <a id="contact" href="mailto:contact@medamineck.com">
+              <div class="icon">
+                <i class="far fa-envelope"></i>
+              </div>
+              GET IN TOUCH NOW
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="testimonial" id="testimonial">
+      <div class="main-container">
+        <div class="titel_label testimonial_tt">Testimonial</div>
         <div class="hr_lable">
-          <hr><span class="label">What's clients say about me</span>
+          <hr />
+          <span class="label">What's clients say about me</span>
         </div>
         <div class="comments">
           <div class="comment_preview flex_content">
@@ -463,10 +804,11 @@
                 <span class="r_val">5.0 Rating</span>
               </div>
               <p id="recommendation-display" class="preview">
-                I would highly recommend Mohamed-Amine for any frontend development role.
-                He has the talent, drive, and dedication to excel in any organization.
-                Mohamed-Amine would be a great addition to any company seeking a talented and experienced frontend
-                developer.
+                I would highly recommend Mohamed-Amine for any frontend
+                development role. He has the talent, drive, and dedication to
+                excel in any organization. Mohamed-Amine would be a great
+                addition to any company seeking a talented and experienced
+                frontend developer.
               </p>
             </div>
             <div class="icon">
@@ -477,103 +819,246 @@
         </div>
         <div class="sponsors">
           <div class="item">
-            <img src="./img/companies/notoriety.png">
+            <img src="./img/companies/notoriety.png" alt="Notoriety" />
           </div>
           <div class="item">
-            <img src="./img/companies/e_agency.png">
+            <img src="./img/companies/e_agency.png" alt="E-Agency" />
           </div>
           <div class="item">
-            <img src="./img/companies/teaching.png">
+            <img src="./img/companies/teaching.png" alt="Teaching" />
           </div>
         </div>
       </div>
+      </div>
     </section>
+    
 
-    <section class="news" id="scripts">
-      <div class="main-container">
-        <div class="hr_lable" onclick="window.open('https://codepen.io/MedAmineCk')">
-          <hr><span class="label">codepen.io/MedAmineCk</span>
-        </div>
-        <div class="flex_content">
-          <div class="card" onclick="window.open('https://codepen.io/MedAmineCk/pen/aLKPJv')">
-            <div class="preview" style="background-image: url(./img/codepen_1.png);"></div>
-            <div class="date">Oct 24, 2019</div>
-            <div class="desc">
-              3d cube rotation
-            </div>
-            <a href="#">Read More <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
-          </div>
-          <div class="card" onclick="window.open('https://codepen.io/MedAmineCk/pen/OzgmxE')">
-            <div class="preview" style="background-image: url(./img/codepen_2.png);"></div>
-            <div class="date">aug 06, 2018</div>
-            <div class="desc">
-              functional clock using css and js
-            </div>
-            <a href="#">Read More <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
-          </div>
-          <div class="card" onclick="window.open('https://codepen.io/MedAmineCk/pen/QWWEMEp')">
-            <div class="preview" style="background-image: url(./img/codepen_3.png);"></div>
-            <div class="date">Dec 26, 2020</div>
-            <div class="desc">
-              sunrise and sunset using only SCSS
-            </div>
-            <a href="#">Read More <span><i class="fas fa-long-arrow-alt-right"></i></span></a>
-          </div>
-        </div>
-      </div>
-    </section>
 
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="profiles">
-        <div class="label">Check out my work on</div>
-        <div class="profiles-links">
-          <a href="https://github.com/MedAmineCk" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://codepen.io/MedAmineCk" target="_blank"><i class="fab fa-codepen"></i></a>
-          <a href="https://www.figma.com/@MedAmineCk" target="_blank"><i class="fab fa-figma"></i></a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="main-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="footer-logo">Med Amine CK</div>
+          <p>
+            Full-stack developer and UI/UX designer with 8+ years of experience building scalable web applications and
+            beautiful user interfaces.
+          </p>
+          <div class="social-links">
+
+            <a href="#" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fas fa-at"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-codepen"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-figma"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4>Services</h4>
+          <a href="#">Web Development</a>
+          <a href="#">UI/UX Design</a>
+          <a href="#">Mobile Apps</a>
+          <a href="#">Consulting</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Work</h4>
+          <a href="#">Projects</a>
+          <a href="#">Case Studies</a>
+          <a href="#">Testimonials</a>
+          <a href="#">Process</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <a href="mailto:contact@medamineck.com">contact@medamineck.com</a>
+          <a href="tel:+212620108495">+212 6 2010 8495</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">WhatsApp</a>
         </div>
       </div>
-      <div class="contact-info">
-        <div class="button-container">
-          <button onclick="window.open('mailto:contact@medamineck.com')">
-            <span>contact me</span>
-            <i class="fas fa-long-arrow-alt-right"></i>
-          </button>
-        </div>
-        <div class="contacts">
-          <div class="item" onclick="window.open('tel:+212620108495')">
-            <div class="icon">
-              <i class="fas fa-phone-alt"></i>
-            </div>
-            <span>+212 6 2010 8495</span>
-          </div>
-          <div class="item" onclick="window.open('mailto:contact@medamineck.com')">
-            <div class="icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <span>contact@medamineck.com</span>
-          </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2017–<span id="year"></span> Med Amine CK. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
         </div>
       </div>
-    </div>
-    <div class="copyright">
-      <span>Copyright © 2023 medamineck.com . All rights reserved.</span>
+
     </div>
   </footer>
-
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/vendor/jquery-3.5.1.min.js"></script>
   <script src="js/plugins.js"></script>
+  <script src="js/whatsapp.js"></script>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+
+
+  <!-- ✅ JavaScript with Rough Notation -->
+  <script type="module">
+    import {
+      annotate,
+      annotationGroup,
+    } from "https://cdn.skypack.dev/rough-notation";
+
+    const annotations = [
+      annotate(document.getElementById("dev"), {
+        type: "underline",
+        color: "#facc15",
+        animationDuration: 800,
+      }),
+      annotate(document.getElementById("uiux"), {
+        type: "circle",
+        color: "#0ff",
+        animationDuration: 800,
+      }),
+      annotate(document.getElementById("code"), {
+        type: "highlight",
+        color: "#ff00c8",
+        animationDuration: 800,
+      }),
+      annotate(document.getElementById("interfaces"), {
+        type: "box",
+        color: "#00ff85",
+        animationDuration: 800,
+      }),
+      annotate(document.getElementById("mvps"), {
+        type: "underline",
+        color: "#00c6ff",
+        animationDuration: 600,
+      }),
+      annotate(document.getElementById("apps"), {
+        type: "circle",
+        color: "#ff8c00",
+        animationDuration: 600,
+      }),
+      annotate(document.getElementById("fast"), {
+        type: "highlight",
+        color: "orange",
+        animationDuration: 600,
+      }),
+      annotate(document.getElementById("functional"), {
+        type: "underline",
+        color: "#ff0077",
+        animationDuration: 600,
+      }),
+      annotate(document.getElementById("beautiful"), {
+        type: "box",
+        color: "#ffd700",
+        animationDuration: 600,
+      }),
+    ];
+
+    const group = annotationGroup(annotations);
+
+    window.addEventListener("load", () => {
+      group.show();
+    });
+  </script>
+
+  <script>
+    window.addEventListener("load", () => {
+      const nameEl = document.querySelector(".highlighted-text");
+      const cursor = document.querySelector(".cursor"); // if you want to add blinking, you can later
+
+      const name = "Med Amine CK";
+
+      function randomDelay(base, variance) {
+        return base + Math.random() * variance;
+      }
+
+      function erase(callback) {
+        function backspace() {
+          if (nameEl.textContent.length > 0) {
+            nameEl.textContent = nameEl.textContent.slice(0, -1);
+            // Erasing speed random between 30ms to 70ms
+            setTimeout(backspace, randomDelay(30, 40));
+          } else {
+            // Pause before starting to type again
+            setTimeout(callback, 500);
+          }
+        }
+        backspace();
+      }
+
+      function type() {
+        let i = 0;
+        function write() {
+          if (i < name.length) {
+            nameEl.textContent += name[i];
+            // Slower pause for spaces to mimic thinking or moving fingers
+            const delay =
+              name[i] === " " ? randomDelay(70, 80) : randomDelay(30, 70);
+            i++;
+            setTimeout(write, delay);
+          } else {
+            // Pause before starting to erase again
+            setTimeout(() => erase(type), 1500);
+          }
+        }
+        write();
+      }
+
+      // Start the loop after page load + small delay
+      setTimeout(type, 2000);
+    });
+  </script>
+
+  <script>
+    window.addEventListener("load", () => {
+      const numEl = document.querySelector(".num_project");
+      const target = 100;
+      const duration = 2000; // animation duration in ms
+      const startTime = performance.now();
+
+      function animateNumber(currentTime) {
+        const elapsed = currentTime - startTime;
+        if (elapsed < duration) {
+          const progress = elapsed / duration;
+          const currentNum = Math.floor(progress * target);
+          numEl.textContent = `+${currentNum}`;
+          requestAnimationFrame(animateNumber);
+        } else {
+          numEl.textContent = `+${target}`; // ensure it ends exactly on target
+        }
+      }
+
+      requestAnimationFrame(animateNumber);
+    });
+  </script>
 
   <script>
     //switch to js files according to device (desk, mobile)
     if (screen && screen.width < 767) {
-      document.write('<script type="text/javascript" src="js/mobile.js"><\/script>');
+      document.write(
+        '<script type="text/javascript" src="js/mobile.js"><\/script>'
+      );
     } else {
-      document.write('<script type="text/javascript" src="js/main.js"><\/script>');
+      document.write(
+        '<script type="text/javascript" src="js/main.js"><\/script>'
+      );
     }
 
     //scrolling
@@ -605,40 +1090,38 @@
       });
     });
 
+    //years of experience
+    const startYear = 2017;
+    const currentYear = new Date().getFullYear();
+    const experience = currentYear - startYear;
+    document.getElementById("experienceYears").textContent = experience;
 
     // Define the array of objects that stores the recommendations
     const recommendations = [
       {
         id: 1,
-        referee: "Okbi Zenasni",
-        profile: '/img/referees/profile_1.png',
-        recommendation: `I would highly recommend Mohamed-Amine for any frontend development role.
-                He has the talent, drive, and dedication to excel in any organization.
-                Mohamed-Amine would be a great addition to any company seeking a talented and experienced frontend
-                developer.`,
-        role: "C.E.O. Mokize"
-      },
+        referee: "Okbi",
+        profile: "/img/referees/profile_1.png",
+        recommendation: "Mohamed-Amine is a rare find. He handled our frontend with confidence, clarity, and speed. Always reliable, always thoughtful. Any team would be lucky to have him.",
+        role: "C.E.O",
+      }
+      ,
       {
         id: 2,
-        referee: "Rachid Amnay",
-        profile: '/img/referees/profile_1.png',
-        recommendation: `It's my pleasure to highly recommend Mohamed-Amine Chekrouni for any teaching position, especially in mathematics. I had the privilege of working alongside Mohamed-Amine at the Ministry of Education, where he was a dedicated and passionate teacher of mathematics. Mohamed-Amine has a unique ability to make complex mathematical concepts easily understandable for students of all levels and abilities.
-In the classroom, Mohamed-Amine creates a positive and engaging learning environment that encourages students to participate and take an active role in their education. He also consistently goes above and beyond to provide additional resources and support to students who need it.
-Mohamed-Amine's commitment to education is evident in his tireless work ethic and genuine care for each of his students. I have no doubt that he will continue to be a valuable asset to any educational institution and make a significant impact on the lives of students.
-If you are looking for a talented, knowledgeable, and enthusiastic teacher of mathematics, I highly recommend Mohamed-Amine Chekrouni. You won't be disappointed!`
-        ,
-        role: "Teacher"
-      },
+        referee: "Rachid",
+        profile: "/img/referees/profile_1.png",
+        recommendation: "I’ve seen few educators as dedicated as Mohamed-Amine. His ability to simplify complex math concepts and truly care about student success is unmatched.",
+        role: "Teacher",
+      }
+      ,
       {
         id: 3,
-        referee: "Abdel Aziz",
-        profile: '/img/referees/profile_1.png',
-        recommendation: `I had the pleasure of working alongside Mohamed-Amine Chekrouni at Notoriety Group and I'm thrilled to highly recommend him. As a backend developer, I had the opportunity to collaborate with Mohamed-Amine on multiple projects, and I was consistently impressed by his skills as a frontend developer.
-Mohamed-Amine has a unique combination of technical expertise, creativity, and strong work ethic that made him a valuable asset to our team. He has an eye for design and a deep understanding of user experience, which allowed him to create intuitive and visually appealing interfaces for our clients. Furthermore, his ability to effectively communicate and collaborate with both technical and non-technical team members made the development process smoother and more efficient.
-In my time working with Mohamed-Amine, I saw him take on challenging projects and consistently deliver high-quality results. He has a passion for his work and is always seeking new ways to improve and enhance his skills. I have no doubt that Mohamed-Amine would bring a similar level of excellence to any team he joins in the future.
-If you're looking for a talented frontend developer with a strong work ethic, I highly recommend Mohamed-Amine Chekrouni. You won't be disappointed.`,
-        role: "Back-end developer"
-      },
+        referee: "Aziz",
+        profile: "/img/referees/profile_1.png",
+        recommendation: "I worked with Mohamed-Amine on several projects and he always delivered. Great eye for detail, solid frontend skills, and a team player all the way.",
+        role: "Developer",
+      }
+      ,
     ];
 
     // Create a jQuery module for each recommendation
@@ -654,7 +1137,7 @@ If you're looking for a talented frontend developer with a strong work ethic, I 
                 <div class="desc">${recommendation.role}</div>
               </div>
             </div>
-        `
+        `;
         isFirst = false;
         return module;
       });
@@ -667,15 +1150,15 @@ If you're looking for a talented frontend developer with a strong work ethic, I 
     function displayRecommendation(_this, id) {
       $("#referees-display .item").removeClass("active");
       $(_this).addClass("active");
-      const selectedRecommendation = recommendations.find(r => r.id === id);
-      $("#recommendation-display").text(selectedRecommendation.recommendation);
+      const selectedRecommendation = recommendations.find((r) => r.id === id);
+      $("#recommendation-display").text(
+        selectedRecommendation.recommendation
+      );
     }
 
     // Call the displayReferees() function to display the modules for each referee
     displayReferees();
-
   </script>
-
 </body>
 
 </html>

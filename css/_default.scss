@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .absolute_center {
@@ -51,12 +52,11 @@ body,
   }
 
   &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, .3);
+    -webkit-box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.3);
     background-color: colors(bg);
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #4FFFA0;
+    background-color: #4fffa0;
   }
-
 }

@@ -1,18 +1,18 @@
 $colors: (
-  full_bg: #1c1d22,
+  full_bg: #0a0a0a,
   bg: #26272d,
   sec: #4fffa0,
   text: rgba(255, 255, 255, 0.8),
   label: rgba(170, 220, 231, 0.8),
   p: #880e4f,
-  orange: #ff8a00,
+  orange: #ff8a00
 );
 $whites: (
   0.8: rgba(255, 255, 255, 0.8),
   0.6: rgba(255, 255, 255, 0.6),
   0.4: rgba(255, 255, 255, 0.4),
   0.2: rgba(255, 255, 255, 0.2),
-  0.02: rgba(255, 255, 255, 0.02),
+  0.02: rgba(255, 255, 255, 0.02)
 );
 $icons: (
   tailwind: #38b2ac,
@@ -21,13 +21,15 @@ $icons: (
   php: #6181b6,
   mysql: #00618a,
   js: #f0db4f,
-  figma: #a159fe,
+  figma: #a159fe
 );
 $padding: 10px;
 $border: 1px solid #607d8b;
 $border-radius: 4px;
 $gradient: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 100%);
-$shadow: -4px -4px 12px rgba(217, 217, 217, 0.05), 4px 4px 12px rgba(0, 0, 0, 0.15);
+$shadow:
+  -4px -4px 12px rgba(217, 217, 217, 0.05),
+  4px 4px 12px rgba(0, 0, 0, 0.15);
 $Roboto: "Roboto", sans-serif;
 $Ubuntu: "Ubuntu", sans-serif;
 $Varela: "Varela Round", sans-serif;
@@ -45,7 +47,7 @@ $Varela: "Varela Round", sans-serif;
 }
 
 $tablet: 1134px;
-$mobile: 500px;
+$mobile: 1134px;
 
 @mixin mobile {
   @media (max-width: #{$mobile}) {
