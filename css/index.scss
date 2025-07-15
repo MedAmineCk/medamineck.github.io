@@ -1,0 +1,20 @@
+@import "./style";
+@import "./sections/cover";
+@import "./sections/about";
+@import "./sections/works";
+@import "./sections/call_to_action";
+@import "./sections/testimonial";
+@import "./sections/scripts";
+
+section {
+    width: 100%;
+
+    &.cover {
+        background: linear-gradient(135deg, rgba(229, 46, 113, 0.1) 0%, rgba(0, 255, 204, 0.05) 100%) !important;
+    }
+
+    &.works,
+    &.testimonial {
+        background: #151515;
+    }
+}

@@ -1,35 +1,83 @@
-<!doctype html>
-<html class="no-js" lang="">
+<!DOCTYPE html>
+<html class="no-js" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Projects</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <title>Projects | Med Amine CK</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
+  <meta property="og:title" content="" />
+  <meta property="og:type" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
 
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="apple-touch-icon" href="/icon.png">
-    <!-- Place favicon.ico in the root directory -->
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="apple-touch-icon" href="/icon.png" />
+  <!-- Place favicon.ico in the root directory -->
 
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/normalize.css" />
+  <link rel="stylesheet" href="/css/main.css" />
 
-    <link rel="stylesheet" href="/css/style.css" media="screen and (min-width: 768px)">
-    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 767px)">
-    <link rel="stylesheet" href="/css/pages/projects.css" media="screen and (min-width: 768px)">
-    <link rel="stylesheet" href="/css/pages/projects-mobile.css" media="screen and (max-width: 767px)">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
-        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/pages/projects-v2.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#fafafa" />
 </head>
 
 <body>
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-trigger" id="whatsappTrigger">
+        <div class="btn-container">
+            <div class="label animate__animated"></div>
+            <div class="icon-container main-btn"></div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Chat Pop-up -->
+    <div class="whatsapp-popup" id="whatsappPopup">
+        <div class="chat-header">
+            <div class="profile-info">
+                <div class="profile-picture">
+                    <img src="/img/profile.png" alt="Med Amine Ck" id="profileImg" />
+                    <div class="online-indicator"></div>
+                </div>
+                <div class="profile-details">
+                    <h3>Med Amine Ck</h3>
+                    <!-- <p>+212 6 2010 8495</p> -->
+                    <div class="contact-number">
+                        <a href="https://wa.me/212620108495" target="_blank" class="cta-phone">+212 6 2010 8495</a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="whatsapp-logo">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"
+                            fill="currentColor" />
+                    </svg>
+                </div>
+                <button class="close-btn" id="closeBtn">×</button>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be dynamically added here -->
+        </div>
+
+        <div class="chat-footer">
+            <form class="message-form" id="messageForm">
+                <input type="text" id="messageInput" placeholder="Type something here..." autocomplete="off" />
+                <button type="submit" class="send-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <header>
         <div class="main-container">
             <div class="nav_tab_icon">
@@ -38,12 +86,10 @@
                 <div class="item"></div>
             </div>
             <div class="logo">
-                <span>MACK</span>
-                <br>
-                <span>Full-Stack Dev</span>
+                <img src="/img/CK-logo.svg" height="40px" />
             </div>
             <nav>
-                <a href="/">Hi</a>
+                <a href="/" >Hi</a>
                 <a href="/pages/about.html">About</a>
                 <a href="/pages/projects.html" class="active">Projects</a>
                 <a href="/index.html#testimonial">Testimonial</a>
@@ -78,408 +124,372 @@
         </div>
     </header>
 
-    <main class="main-container">
-        <div class="titel_label">
-            Projects
-        </div>
-        <div class="container">
-            <div class="card-item" id="delivery">
-                <div class="thumbnail-parent">
-                    <div class="thumbnail-container">
-                        <img src="/img/projects/deliveryPlatform.png" alt="deliveryPlatform">
-                    </div>
-                    <div class="buttons-group-container">
-                        <a href="https://www.figma.com/community/file/1206415310932051558" target="_blank">
-                            <div class="icon"><img src="/img/icons/figma.svg" alt="figma"></div>
-                            <div class="icon-label">Design</div>
-                        </a>
-                        <a href="#" target="_blank">
-                            <div class="icon"><img src="/img/icons/github.svg" alt="github"></div>
-                            <div class="icon-label">Code</div>
-                        </a>
-                        <a href="#" target="_blank">
-                            <div class="icon"><img src="/img/icons/youtube.svg" alt="youtube"></div>
-                            <div class="icon-label">Video</div>
-                        </a>
-                        <a href="#" target="_blank">
-                            <div class="icon"><img src="/img/icons/website.svg" alt="website"></div>
-                            <div class="icon-label">Website</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="project-title">Delivery Platform</div>
-                    <p class="description">
-                        A comprehensive delivery solution with real-time tracking and a user-friendly interface. The
-                        platform includes three distinct dashboards - one for administrators, one for clients, and one
-                        for delivery drivers.
-                    </p>
-                    <div class="tools">
-                        <div class="label">
-                            <div class="icon">
-                                <div class="dote"></div>
-                            </div>
-                            <span>Front-end</span>
-                        </div>
-                        <div class="tags-container">
-                            <div class="tag">HTML</div>
-                            <div class="tag">SCSS</div>
-                            <div class="tag">JQuery</div>
-                        </div>
-                    </div>
-                    <div class="tools">
-                        <div class="label">
-                            <div class="icon">
-                                <div class="dote"></div>
-                            </div>
-                            <div class="dote"></div>
-                            <span>Back-end</span>
-                        </div>
-                        <div class="tags-container">
-                            <div class="tag">PHP</div>
-                            <div class="tag">MySQL</div>
-                            <div class="tag">AJAX</div>
-                            <div class="tag">API</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-item" id="callCenter">
-                <div class="content">
-                    <div class="project-title">Call Center website</div>
-                    <p class="description">
-                        A professional and user-friendly platform for a call center service provider. This website
-                        showcases the call center's services, including inbound and outbound call handling, customer
-                        support, and telemarketing.
-                    </p>
-                    <div class="tools">
-                        <div class="label">
-                            <div class="icon">
-                                <div class="dote"></div>
-                            </div>
-                            <span>Front-end</span>
-                        </div>
-                        <div class="tags-container">
-                            <div class="tag">HTML</div>
-                            <div class="tag">SCSS</div>
-                            <div class="tag">JQuery</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="thumbnail-parent">
-                    <div class="thumbnail-container">
-                        <img src="/img/projects/callCenterWebsite.png" alt="Call Centre website">
-                    </div>
-                    <div class="buttons-group-container">
-                        <a href="https://github.com/MedAmineCk/Notoriety-Group" target="_blank">
-                            <div class="icon"><img src="/img/icons/github.svg" alt="github"></div>
-                            <div class="icon-label">Code</div>
-                        </a>
-                        <a href="https://youtu.be/K-eh65k_XHA" target="_blank">
-                            <div class="icon"><img src="/img/icons/youtube.svg" alt="youtube"></div>
-                            <div class="icon-label">Video</div>
-                        </a>
-                        <a href="https://www.notoriety-group.com/" target="_blank">
-                            <div class="icon"><img src="/img/icons/website.svg" alt="website"></div>
-                            <div class="icon-label">Website</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-item" id="blog">
-                <div class="thumbnail-parent">
-                    <div class="thumbnail-container">
-                        <img src="/img/projects/foodRecipesBlog.png" alt="Food recipes blog">
-                    </div>
-                    <div class="buttons-group-container">
-                        <a href="https://www.figma.com/community/file/1207406762685974214" target="_blank">
-                            <div class="icon"><img src="/img/icons/figma.svg" alt="figma"></div>
-                            <div class="icon-label">Design</div>
-                        </a>
-                        <a href="https://github.com/MedAmineCk/Okla-Blogger" target="_blank">
-                            <div class="icon"><img src="/img/icons/github.svg" alt="github"></div>
-                            <div class="icon-label">Code</div>
-                        </a>
-                        <a href="https://youtu.be/GwzM6QqY7JQ" target="_blank">
-                            <div class="icon"><img src="/img/icons/youtube.svg" alt="youtube"></div>
-                            <div class="icon-label">Video</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="project-title">Food recipes blog</div>
-                    <p class="description">
-                        A visually appealing and user-friendly platform for food enthusiasts. This website features a
-                        large collection of recipes, organized by cuisine, ingredient, and course, with detailed
-                        instructions and photos.
-                    </p>
-                    <div class="tools">
-                        <div class="label">
-                            <div class="icon">
-                                <div class="dote"></div>
-                            </div>
-                            <span>Front-end</span>
-                        </div>
-                        <div class="tags-container">
-                            <div class="tag">HTML</div>
-                            <div class="tag">SCSS</div>
-                            <div class="tag">JQuery</div>
-                        </div>
-                    </div>
-                    <div class="tools">
-                        <div class="label">
-                            <div class="icon">
-                                <div class="dote"></div>
-                            </div>
-                            <div class="dote"></div>
-                            <span>Back-end</span>
-                        </div>
-                        <div class="tags-container">
-                            <div class="tag">PHP</div>
-                            <div class="tag">MySQL</div>
-                            <div class="tag">AJAX</div>
-                            <div class="tag">API</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-item">
-                <div class="content">
-                    <div class="project-title">Consulting Website</div>
-                    <p class="description">
-                        A professional and user-friendly website designed for a consulting firm. This website showcases
-                        the firm's services, portfolio, and team, and allows clients to book consultations directly
-                        through the platform.
-                    </p>
-                    <div class="tools">
-                        <div class="label">
-                            <div class="icon">
-                                <div class="dote"></div>
-                            </div>
-                            <span>Front-end</span>
-                        </div>
-                        <div class="tags-container">
-                            <div class="tag">HTML</div>
-                            <div class="tag">SCSS</div>
-                            <div class="tag">JQuery</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="thumbnail-parent">
-                    <div class="thumbnail-container">
-                        <img src="/img/projects/consultingWebsite.png" alt="consultingWebsite">
-                    </div>
-                    <div class="buttons-group-container">
-                        <a href="https://www.figma.com/community/file/1206350245346385462" target="_blank">
-                            <div class="icon"><img src="/img/icons/figma.svg" alt="figma"></div>
-                            <div class="icon-label">Design</div>
-                        </a>
-                        <a href="https://github.com/MedAmineCk/Pro-Business" target="_blank">
-                            <div class="icon"><img src="/img/icons/github.svg" alt="github"></div>
-                            <div class="icon-label">Code</div>
-                        </a>
-                        <a href="http://medamineck.com/Pro-Business/" target="_blank">
-                            <div class="icon"><img src="/img/icons/website.svg" alt="website"></div>
-                            <div class="icon-label">Website</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-item">
-                <div class="thumbnail-parent">
-                    <div class="thumbnail-container">
-                        <img src="/img/projects/awningShop.png" alt="Awning Shop">
-                    </div>
-                    <div class="buttons-group-container">
-                        <a href="https://www.figma.com/community/file/1206396536436999776" target="_blank">
-                            <div class="icon"><img src="/img/icons/figma.svg" alt="figma"></div>
-                            <div class="icon-label">Design</div>
-                        </a>
-                        <a href="https://github.com/MedAmineCk/toldos.github.io" target="_blank">
-                            <div class="icon"><img src="/img/icons/github.svg" alt="github"></div>
-                            <div class="icon-label">Code</div>
-                        </a>
-                        <a href="https://toldosfouad.shop/" target="_blank">
-                            <div class="icon"><img src="/img/icons/website.svg" alt="website"></div>
-                            <div class="icon-label">Website</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="project-title">Awning Shop</div>
-                    <p class="description">
-                        A professional and user-friendly website for an awnings shop. This website showcases the shop's
-                        products, including awnings, canopies, and other outdoor shading solutions.
-                    </p>
-                    <div class="tools">
-                        <div class="label">
-                            <div class="icon">
-                                <div class="dote"></div>
-                            </div>
-                            <span>Front-end</span>
-                        </div>
-                        <div class="tags-container">
-                            <div class="tag">HTML</div>
-                            <div class="tag">SCSS</div>
-                            <div class="tag">JQuery</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card-item">
-                <div class="content">
-                    <div class="project-title">Books shelf website</div>
-                    <p class="description">
-                        A promotional platform for an independent author to showcase their Kindle Direct Publishing
-                        (KDP) books. This website features a comprehensive list of the author's books, along with
-                        descriptions, cover images, and links to purchase on Amazon.
-                    </p>
-                    <div class="tools">
-                        <div class="label">
-                            <div class="icon">
-                                <div class="dote"></div>
-                            </div>
-                            <span>Front-end</span>
-                        </div>
-                        <div class="tags-container">
-                            <div class="tag">HTML</div>
-                            <div class="tag">SCSS</div>
-                            <div class="tag">JQuery</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="thumbnail-parent">
-                    <div class="thumbnail-container">
-                        <img src="/img/projects/bookShelf.png" alt="Books shelf website">
-                    </div>
-                    <div class="buttons-group-container">
-                        <a href="https://www.figma.com/community/file/1206403269428339298" target="_blank">
-                            <div class="icon"><img src="/img/icons/figma.svg" alt="figma"></div>
-                            <div class="icon-label">Design</div>
-                        </a>
-                        <a href="https://github.com/MedAmineCk/valuablebooks.shop" target="_blank">
-                            <div class="icon"><img src="/img/icons/github.svg" alt="github"></div>
-                            <div class="icon-label">Code</div>
-                        </a>
-                        <a href="https://valuablebooks.shop/" target="_blank">
-                            <div class="icon"><img src="/img/icons/website.svg" alt="website"></div>
-                            <div class="icon-label">Website</div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-item">
-                <div class="thumbnail-parent">
-                    <div class="thumbnail-container">
-                        <img src="/img/projects/recruitmentSystem.png" alt="Recruitment System">
-                    </div>
-                    <div class="buttons-group-container">
-                        <a href="https://github.com/MedAmineCk/job-interview-system-web-app" target="_blank">
-                            <div class="icon"><img src="/img/icons/github.svg" alt="github"></div>
-                            <div class="icon-label">Code</div>
-                        </a>
-                        <a href="https://youtu.be/yBZWgSg3h2w" target="_blank">
-                            <div class="icon"><img src="/img/icons/youtube.svg" alt="youtube"></div>
-                            <div class="icon-label">Video</div>
-                        </a>
-                        <a href="http://medamineck.com/job-interview-system-web-app/" target="_blank">
-                            <div class="icon"><img src="/img/icons/website.svg" alt="website"></div>
-                            <div class="icon-label">Website</div>
-                        </a>
-                    </div>
-                </div>
-                <div class="content">
-                    <div class="project-title">Recruitment System</div>
-                    <p class="description">
-                        A comprehensive and user-friendly platform for managing the recruitment process. This website
-                        features a powerful candidate management system, allowing HR personnel and recruiters to easily
-                        track and organize candidate applications, resumes, and interview schedules.
-                    </p>
-                    <div class="tools">
-                        <div class="label">
-                            <div class="icon">
-                                <div class="dote"></div>
-                            </div>
-                            <span>Front-end</span>
-                        </div>
-                        <div class="tags-container">
-                            <div class="tag">HTML</div>
-                            <div class="tag">SCSS</div>
-                            <div class="tag">JQuery</div>
-                        </div>
-                    </div>
-                    <div class="tools">
-                        <div class="label">
-                            <div class="icon">
-                                <div class="dote"></div>
-                            </div>
-                            <span>Back-end</span>
-                        </div>
-                        <div class="tags-container">
-                            <div class="tag">PHP</div>
-                            <div class="tag">MySQL</div>
-                            <div class="tag">AJAX</div>
-                            <div class="tag">API</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <main>
+        <section class="projects" id="projects">
+            <div class="main-container">
 
-        </div>
+                <h1 class="page-title">Projects</h1>
+
+                <div class="projects-container">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-info">
+                                <h3>Delivery Platform</h3>
+                                <p class="project-description">A comprehensive delivery solution with real-time tracking
+                                    and a
+                                    user-friendly interface. The platform includes three distinct dashboards - one for
+                                    administrators, one for clients, and one for delivery drivers.</p>
+
+                                <div class="tech-stack">
+                                    <div class="tech-row">
+                                        <div class="tech-label">Front-end</div>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">HTML</span>
+                                            <span class="tech-tag">SCSS</span>
+                                            <span class="tech-tag">jQuery</span>
+                                        </div>
+                                    </div>
+                                    <div class="tech-row">
+                                        <div class="tech-label">Back-end</div>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">PHP</span>
+                                            <span class="tech-tag">MySQL</span>
+                                            <span class="tech-tag">AJAX</span>
+                                            <span class="tech-tag">API</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="project-links">
+                                    <a href="#" class="project-link figma">
+                                        <i class="fab fa-figma"></i>
+                                        <span>Design</span>
+                                    </a>
+                                    <a href="#" class="project-link github">
+                                        <i class="fab fa-github"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="#" class="project-link youtube">
+                                        <i class="fab fa-youtube"></i>
+                                        <span>Video</span>
+                                    </a>
+                                    <a href="#" class="project-link website">
+                                        <i class="fas fa-globe"></i>
+                                        <span>Website</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x300/667eea/ffffff?text=Delivery+Platform"
+                                    alt="Delivery Platform">
+                                <div class="project-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-info">
+                                <h3>Call Center Website</h3>
+                                <p class="project-description">A professional and user-friendly platform for a call
+                                    center
+                                    service provider. This website showcases the call center's services, including
+                                    inbound and
+                                    outbound call handling, customer support, and telemarketing.</p>
+
+                                <div class="tech-stack">
+                                    <div class="tech-row">
+                                        <div class="tech-label">Front-end</div>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">HTML</span>
+                                            <span class="tech-tag">SCSS</span>
+                                            <span class="tech-tag">jQuery</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="project-links">
+                                    <a href="#" class="project-link github">
+                                        <i class="fab fa-github"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="#" class="project-link youtube">
+                                        <i class="fab fa-youtube"></i>
+                                        <span>Video</span>
+                                    </a>
+                                    <a href="#" class="project-link website">
+                                        <i class="fas fa-globe"></i>
+                                        <span>Website</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x300/764ba2/ffffff?text=Call+Center+Website"
+                                    alt="Call Center Website">
+                                <div class="project-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-info">
+                                <h3>Food Recipes Blog</h3>
+                                <p class="project-description">A beautiful and responsive food blog featuring delicious
+                                    recipes,
+                                    cooking tips, and culinary experiences. The platform includes recipe categorization,
+                                    search
+                                    functionality, and user interaction features.</p>
+
+                                <div class="tech-stack">
+                                    <div class="tech-row">
+                                        <div class="tech-label">Front-end</div>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">React</span>
+                                            <span class="tech-tag">TypeScript</span>
+                                            <span class="tech-tag">Tailwind CSS</span>
+                                        </div>
+                                    </div>
+                                    <div class="tech-row">
+                                        <div class="tech-label">Back-end</div>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">Node.js</span>
+                                            <span class="tech-tag">Express</span>
+                                            <span class="tech-tag">MongoDB</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="project-links">
+                                    <a href="#" class="project-link figma">
+                                        <i class="fab fa-figma"></i>
+                                        <span>Design</span>
+                                    </a>
+                                    <a href="#" class="project-link github">
+                                        <i class="fab fa-github"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="#" class="project-link youtube">
+                                        <i class="fab fa-youtube"></i>
+                                        <span>Video</span>
+                                    </a>
+                                    <a href="#" class="project-link website">
+                                        <i class="fas fa-globe"></i>
+                                        <span>Website</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x300/f093fb/ffffff?text=Food+Recipes+Blog"
+                                    alt="Food Recipes Blog">
+                                <div class="project-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-info">
+                                <h3>E-Commerce Dashboard</h3>
+                                <p class="project-description">A comprehensive admin dashboard for e-commerce management
+                                    with
+                                    real-time analytics, inventory management, order tracking, and customer management
+                                    features.
+                                    Built with modern technologies for optimal performance.</p>
+
+                                <div class="tech-stack">
+                                    <div class="tech-row">
+                                        <div class="tech-label">Front-end</div>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">Vue.js</span>
+                                            <span class="tech-tag">Nuxt.js</span>
+                                            <span class="tech-tag">SCSS</span>
+                                        </div>
+                                    </div>
+                                    <div class="tech-row">
+                                        <div class="tech-label">Back-end</div>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">Laravel</span>
+                                            <span class="tech-tag">MySQL</span>
+                                            <span class="tech-tag">Redis</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="project-links">
+                                    <a href="#" class="project-link figma">
+                                        <i class="fab fa-figma"></i>
+                                        <span>Design</span>
+                                    </a>
+                                    <a href="#" class="project-link github">
+                                        <i class="fab fa-github"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="#" class="project-link youtube">
+                                        <i class="fab fa-youtube"></i>
+                                        <span>Video</span>
+                                    </a>
+                                    <a href="#" class="project-link website">
+                                        <i class="fas fa-globe"></i>
+                                        <span>Website</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x300/4facfe/ffffff?text=E-Commerce+Dashboard"
+                                    alt="E-Commerce Dashboard">
+                                <div class="project-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-info">
+                                <h3>Fitness Tracker App</h3>
+                                <p class="project-description">A comprehensive fitness tracking application with workout
+                                    planning, progress monitoring, nutrition tracking, and social features. Designed to
+                                    help
+                                    users achieve their fitness goals with personalized recommendations.</p>
+
+                                <div class="tech-stack">
+                                    <div class="tech-row">
+                                        <div class="tech-label">Mobile</div>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">React Native</span>
+                                            <span class="tech-tag">TypeScript</span>
+                                            <span class="tech-tag">Redux</span>
+                                        </div>
+                                    </div>
+                                    <div class="tech-row">
+                                        <div class="tech-label">Back-end</div>
+                                        <div class="tech-tags">
+                                            <span class="tech-tag">Firebase</span>
+                                            <span class="tech-tag">Cloud Functions</span>
+                                            <span class="tech-tag">Firestore</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="project-links">
+                                    <a href="#" class="project-link figma">
+                                        <i class="fab fa-figma"></i>
+                                        <span>Design</span>
+                                    </a>
+                                    <a href="#" class="project-link github">
+                                        <i class="fab fa-github"></i>
+                                        <span>Code</span>
+                                    </a>
+                                    <a href="#" class="project-link youtube">
+                                        <i class="fab fa-youtube"></i>
+                                        <span>Video</span>
+                                    </a>
+                                    <a href="#" class="project-link website">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>App</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="project-image">
+                                <img src="https://via.placeholder.com/400x300/43e97b/ffffff?text=Fitness+Tracker+App"
+                                    alt="Fitness Tracker App">
+                                <div class="project-overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="main-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">Med Amine CK</div>
+                    <p>
+                        Full-stack developer and UI/UX designer with 8+ years of experience building scalable web
+                        applications and
+                        beautiful user interfaces.
+                    </p>
+                    <div class="social-links">
 
-    <footer>
-        <div class="container">
-            <div class="profiles">
-                <div class="label">Check out my work on</div>
-                <div class="profiles-links">
-                    <a href="https://github.com/MedAmineCk" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://codepen.io/MedAmineCk" target="_blank"><i class="fab fa-codepen"></i></a>
-                    <a href="https://www.figma.com/@MedAmineCk" target="_blank"><i class="fab fa-figma"></i></a>
-                </div>
-            </div>
-            <div class="contact-info">
-                <div class="button-container">
-                    <button onclick="window.open('mailto:contact@medamineck.com')">
-                        <span>contact me</span>
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </button>
-                </div>
-                <div class="contacts">
-                    <div class="item" onclick="window.open('tel:+212620108495')">
-                        <div class="icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <span>+212 6 2010 8495</span>
-                    </div>
-                    <div class="item" onclick="window.open('mailto:contact@medamineck.com')">
-                        <div class="icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <span>contact@medamineck.com</span>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fas fa-at"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-codepen"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-figma"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
                     </div>
                 </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="#">Web Development</a>
+                    <a href="#">UI/UX Design</a>
+                    <a href="#">Mobile Apps</a>
+                    <a href="#">Consulting</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Work</h4>
+                    <a href="#">Projects</a>
+                    <a href="#">Case Studies</a>
+                    <a href="#">Testimonials</a>
+                    <a href="#">Process</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="mailto:contact@medamineck.com">contact@medamineck.com</a>
+                    <a href="tel:+212620108495">+212 6 2010 8495</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">WhatsApp</a>
+                </div>
             </div>
-        </div>
-        <div class="copyright">
-            <span>Copyright © 2023 medamineck.com . All rights reserved.</span>
+
+            <div class="footer-bottom">
+                <p>&copy; 2017–<span id="year"></span> Med Amine CK. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+
         </div>
     </footer>
-
 
     <script src="/js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="/js/vendor/jquery-3.5.1.min.js"></script>
     <script src="/js/plugins.js"></script>
+    <script src="/js/whatsapp.js"></script>
+    <script src="/js/index.js"></script>
 
     <script>
-        //switch to js files according to device (desk, mobile)
-        if (screen && screen.width < 767) {
-            document.write('<script type="text/javascript" src="/js/mobile.js"><\/script>');
-        } else {
-            document.write('<script type="text/javascript" src="/js/main.js"><\/script>');
-        }
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
-
 </body>
 
 </html>
