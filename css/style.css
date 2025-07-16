@@ -246,14 +246,16 @@ aside .label {
 }
 .btns a#cv {
   background: #0a0a0a !important;
-  box-shadow: -4px -4px 12px rgba(217, 217, 217, 0.05), 4px 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: -4px -4px 12px rgba(217, 217, 217, 0.05),
+    4px 4px 12px rgba(0, 0, 0, 0.15);
   color: #00ff94;
   border: 2px solid #00ff94;
 }
 .btns a:hover {
   transform: translateY(-2px);
   animation-play-state: paused;
-  box-shadow: 0 0 20px rgba(0, 255, 196, 0.8), 0 0 40px rgba(0, 255, 196, 0.5), inset 0 3px 6px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 196, 0.8), 0 0 40px rgba(0, 255, 196, 0.5),
+    inset 0 3px 6px rgba(255, 255, 255, 0.1);
 }
 .btns a .icon {
   font-size: 1.25rem;
@@ -315,7 +317,8 @@ aside .label {
   transform: scale(1.1);
   box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
 }
-#whatsappTrigger .btn-container .icon-container::before, #whatsappTrigger .btn-container .icon-container::after {
+#whatsappTrigger .btn-container .icon-container::before,
+#whatsappTrigger .btn-container .icon-container::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -366,7 +369,9 @@ aside .label {
    Animations
 ============================== */
 @keyframes wave {
-  0%, 60%, 100% {
+  0%,
+  60%,
+  100% {
     transform: rotate(0deg) scale(1);
   }
   10% {
@@ -521,7 +526,7 @@ aside .label {
   height: 100%;
   border-radius: 50%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .online-indicator {
@@ -595,7 +600,16 @@ aside .label {
   padding: 16px;
   overflow-y: auto;
   background: #0f1419;
-  background-image: radial-gradient(circle at 25% 25%, rgba(37, 211, 102, 0.05) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(37, 211, 102, 0.03) 0%, transparent 50%);
+  background-image: radial-gradient(
+      circle at 25% 25%,
+      rgba(37, 211, 102, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(37, 211, 102, 0.03) 0%,
+      transparent 50%
+    );
 }
 
 .message {
@@ -672,7 +686,9 @@ aside .label {
 }
 
 @keyframes typingAnimation {
-  0%, 60%, 100% {
+  0%,
+  60%,
+  100% {
     transform: translateY(0);
     opacity: 0.4;
   }
@@ -908,7 +924,7 @@ header nav {
     align-items: center;
     background-color: rgba(38, 39, 45, 0.9137254902);
     -webkit-backdrop-filter: blur(30px);
-            backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
   }
   header nav.active {
     display: flex;
@@ -947,11 +963,13 @@ header nav a.active::before {
 header nav a.active::after {
   content: "/>";
 }
-header nav a.active::after, header nav a.active::before {
+header nav a.active::after,
+header nav a.active::before {
   display: inline-block;
 }
 @media (max-width: 1134px) {
-  header nav a.active::after, header nav a.active::before {
+  header nav a.active::after,
+  header nav a.active::before {
     display: none;
   }
 }
@@ -962,7 +980,8 @@ header .contacts {
   border-radius: 150px;
   color: rgba(255, 255, 255, 0.6);
   padding: 10px;
-  box-shadow: -4px -4px 12px rgba(217, 217, 217, 0.05), 4px 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: -4px -4px 12px rgba(217, 217, 217, 0.05),
+    4px 4px 12px rgba(0, 0, 0, 0.15);
   position: absolute;
   right: 0;
   top: 20px;
@@ -1028,14 +1047,16 @@ header .contacts .open {
     transition: all linear 0.2s;
     color: rgba(255, 255, 255, 0.6);
     padding: 10px;
-    box-shadow: -4px -4px 12px rgba(217, 217, 217, 0.05), 4px 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: -4px -4px 12px rgba(217, 217, 217, 0.05),
+      4px 4px 12px rgba(0, 0, 0, 0.15);
     position: absolute;
     right: 20px;
     top: 20px;
     font-size: 14px;
     font-weight: normal;
     background: #26272d;
-    box-shadow: -4px -4px 4px rgba(65, 65, 65, 0.15), 4px 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: -4px -4px 4px rgba(65, 65, 65, 0.15),
+      4px 4px 12px rgba(0, 0, 0, 0.15);
     border-bottom: 2px solid #4fffa0;
   }
   header .contacts .item {
@@ -1236,7 +1257,12 @@ body:after {
   height: 100vw;
   border-radius: 50%;
   background: #833ab4;
-  background: linear-gradient(90deg, rgb(131, 58, 180) 0%, rgb(253, 29, 29) 50%, rgb(252, 176, 69) 100%);
+  background: linear-gradient(
+    90deg,
+    rgb(131, 58, 180) 0%,
+    rgb(253, 29, 29) 50%,
+    rgb(252, 176, 69) 100%
+  );
   position: absolute;
   top: calc(-0.9 * 100vw);
   left: 50%;
@@ -1251,7 +1277,7 @@ body:after {
 body header {
   background: rgba(24, 24, 29, 0.3);
   -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 body .main-container {
   width: 100%;
@@ -1260,4 +1286,4 @@ body .main-container {
   margin: 0 auto;
   position: relative;
   padding: 0 20px;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

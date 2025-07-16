@@ -169,8 +169,19 @@ hr {
 .titel_label.testimonial_tt::before {
   content: "T";
   left: -28px;
-  bottom: -154px;
+  bottom: 0;
   margin-left: -16px;
+}
+.titel_label.project_tt::before {
+  content: "Projects";
+  left: -12px;
+  bottom: -34px;
+}
+@media (max-width: 1134px) {
+  .titel_label.project_tt::before {
+    left: -2px;
+    bottom: -2px;
+  }
 }
 
 .label {

@@ -169,8 +169,19 @@ hr {
 .titel_label.testimonial_tt::before {
   content: "T";
   left: -28px;
-  bottom: -154px;
+  bottom: 0;
   margin-left: -16px;
+}
+.titel_label.project_tt::before {
+  content: "Projects";
+  left: -12px;
+  bottom: -34px;
+}
+@media (max-width: 1134px) {
+  .titel_label.project_tt::before {
+    left: -2px;
+    bottom: -2px;
+  }
 }
 
 .label {
@@ -1264,24 +1275,14 @@ body .main-container {
 
 #projects {
   padding: 100px 0;
+  overflow-x: hidden;
 }
-#projects .page-title {
+#projects .titel_label {
   font-size: 4rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 40px;
   text-align: left;
-}
-@media (max-width: 1134px) {
-  #projects .page-title {
-    font-size: 3rem;
-    text-align: center;
-  }
-}
-@media (max-width: 1134px) {
-  #projects .page-title {
-    font-size: 2.5rem;
-  }
 }
 #projects .projects-container {
   display: flex;

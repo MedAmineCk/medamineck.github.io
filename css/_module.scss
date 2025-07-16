@@ -54,8 +54,19 @@ hr {
     &::before {
       content: "T";
       left: -28px;
-      bottom: -154px;
+      bottom: -0;
       margin-left: -16px;
+    }
+  }
+
+  &.project_tt::before {
+    content: "Projects";
+    left: -12px;
+    bottom: -34px;
+
+    @include mobile() {
+      left: -2px;
+      bottom: -2px;
     }
   }
 }
