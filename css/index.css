@@ -1959,46 +1959,85 @@ section.about .section-label span {
   margin-bottom: 24px;
   font-size: 16px;
 }
-.introduce .metrics-grid {
+.introduce .graduations {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(200px, 250px) 1fr;
+  grid-template-areas: "bachelor bac1" "bachelor bac2";
   gap: 12px;
   margin-bottom: 32px;
 }
-.introduce .metrics-grid .metric-card {
+@media (max-width: 1134px) {
+  .introduce .graduations {
+    grid-template-columns: 1fr;
+    grid-template-areas: "bachelor" "bac1" "bac2";
+  }
+}
+.introduce .graduations .card {
   background: linear-gradient(135deg, rgba(229, 46, 113, 0.1) 0%, rgba(255, 107, 53, 0.1) 100%);
   border: 1px solid rgba(229, 46, 113, 0.2);
   border-radius: 8px;
   padding: 16px;
-  text-align: center;
   position: relative;
+  text-align: start;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, rgba(229, 46, 113, 0.1) 0%, rgba(0, 255, 204, 0.05) 100%);
 }
-.introduce .metrics-grid .metric-card .metric-number {
+.introduce .graduations .card .icon {
+  font-size: 36px;
+  color: #4fffa0;
+  margin-bottom: 8px;
+}
+.introduce .graduations .card .title {
   font-size: 24px;
   font-weight: 700;
   color: #e52e71;
   display: block;
+  font-weight: 900;
+  background: radial-gradient(49.49% 260.63% at 48.33% 50.51%, #ff8a00 0%, #e52e71 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.introduce .metrics-grid .metric-card .metric-label {
+.introduce .graduations .card .label {
   font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 4px;
 }
+.introduce .graduations .card.bachelor {
+  grid-area: bachelor;
+  flex-direction: column;
+  text-align: center;
+}
+@media (max-width: 1134px) {
+  .introduce .graduations .card.bachelor {
+    flex-direction: row;
+    text-align: start;
+  }
+}
+.introduce .graduations .card.bac1 {
+  grid-area: bac1;
+}
+.introduce .graduations .card.bac2 {
+  grid-area: bac2;
+}
+.introduce .graduations .card .date {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
 .introduce .specialties {
   margin-bottom: 32px;
 }
-.introduce .specialties-title {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
 .introduce .specialties-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -2013,9 +2052,45 @@ section.about .section-label span {
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: #fff;
   padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: 30px;
   font-size: 13px;
   font-weight: 500;
+  display: flex;
+  min-width: 250px;
+}
+@media (max-width: 1134px) {
+  .introduce .specialties-list .specialty-tag {
+    width: 100%;
+  }
+}
+.introduce .specialties-list .specialty-tag .icon {
+  font-size: 24px;
+  margin-right: 8px;
+  color: #4fffa0;
+}
+.introduce .specialties-list .specialty-tag .group {
+  width: 100%;
+  text-align: start;
+}
+.introduce .specialties-list .specialty-tag .group .title {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+.introduce .specialties-list .specialty-tag .group .flex-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 4px;
+}
+.introduce .specialties-list .specialty-tag .group .flex-group a {
+  font-size: 14px;
+  color: #4fffa0;
+}
+@media (max-width: 1134px) {
+  .introduce .specialties-list .specialty-tag .group .flex-group a {
+    font-size: 12px;
+  }
 }
 
 section.works {

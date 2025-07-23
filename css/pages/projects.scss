@@ -102,7 +102,7 @@ main {
                             justify-content: center;
                             align-items: center;
                             .dote {
-                                $size: $size/2;
+                                $size: calc($size / 2);
                                 width: $size;
                                 height: $size;
                                 border-radius: $size;

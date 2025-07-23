@@ -283,33 +283,82 @@ $white: #fff;
         font-size: 16px;
     }
 
-    .metrics-grid {
+    .graduations {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: minmax(200px, 250px) 1fr;
+        grid-template-areas: "bachelor bac1" "bachelor bac2";
+        @include mobile {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "bachelor"
+                "bac1"
+                "bac2";
+        }
         gap: 12px;
         margin-bottom: 32px;
 
-        .metric-card {
+        .card {
             background: linear-gradient(135deg, rgba($secondary, 0.1) 0%, rgba($warning, 0.1) 100%);
             border: 1px solid rgba($secondary, 0.2);
             border-radius: 8px;
             padding: 16px;
-            text-align: center;
             position: relative;
+            text-align: start;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, rgba(229, 46, 113, 0.1) 0%, rgba(0, 255, 204, 0.05) 100%);
 
-            .metric-number {
+            .icon {
+                font-size: 36px;
+                color: colors(sec);
+                margin-bottom: 8px;
+            }
+
+            .title {
                 font-size: 24px;
                 font-weight: 700;
                 color: $secondary;
                 display: block;
+                font-weight: 900;
+                background: $gradient;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
 
-            .metric-label {
+            .label {
                 font-size: 12px;
                 color: rgba($white, 0.6);
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 margin-top: 4px;
+            }
+
+            &.bachelor {
+                grid-area: bachelor;
+                flex-direction: column;
+                text-align: center;
+
+                @include mobile {
+                    flex-direction: row;
+                    text-align: start;
+                }
+            }
+            &.bac1 {
+                grid-area: bac1;
+            }
+            &.bac2 {
+                grid-area: bac2;
+            }
+
+            .date {
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                font-size: 12px;
+                color: rgba($white, 0.6);
             }
         }
     }
@@ -317,17 +366,9 @@ $white: #fff;
     .specialties {
         margin-bottom: 32px;
 
-        &-title {
-            color: rgba($white, 0.8);
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
         &-list {
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 8px;
             @include mobile {
@@ -340,9 +381,45 @@ $white: #fff;
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 color: $white;
                 padding: 8px 16px;
-                border-radius: 20px;
+                border-radius: 30px;
                 font-size: 13px;
                 font-weight: 500;
+                display: flex;
+                min-width: 250px;
+                @include mobile {
+                    width: 100%;
+                }
+
+                .icon {
+                    font-size: 24px;
+                    margin-right: 8px;
+                    color: colors(sec);
+                }
+
+                .group {
+                    width: 100%;
+                    text-align: start;
+
+                    .title {
+                        font-size: 14px;
+                        margin-bottom: 4px;
+                    }
+                    .flex-group {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        margin-top: 4px;
+
+                        a {
+                            font-size: 14px;
+                            color: colors(sec);
+                            @include mobile {
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
