@@ -2,16 +2,17 @@ header {
     width: 100%;
     margin: 0 auto;
     height: 80px;
-    display: flex;
-    align-items: center;
+    background: colors(bg);
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
-    font-family: $Varela;
     transition: all linear 0.4s;
-    background: colors(bg);
+    .main-container {
+        display: flex;
+        align-items: center;
+    }
 
     &.fixed {
         $height: 60px;
@@ -124,26 +125,6 @@ header {
     }
 
     .logo {
-        position: absolute;
-        top: 35px;
-        left: 35px;
-        font-family: $Varela;
-        line-height: 20px;
-        text-align: center;
-
-        span:nth-of-type(1) {
-            font-size: 48px;
-            color: rgba(214, 241, 247, 0.6);
-        }
-
-        span:nth-of-type(2) {
-            font-size: 21px;
-            color: rgba(143, 160, 166, 0.48);
-        }
-
-        @include mobile {
-            display: none;
-        }
     }
 
     nav {
