@@ -12,6 +12,9 @@ header {
     .main-container {
         display: flex;
         align-items: center;
+        @include mobile {
+            justify-content: center;
+        }
     }
 
     &.fixed {
@@ -214,6 +217,13 @@ header {
         font-size: 14px;
         font-weight: normal;
 
+        @include mobile() {
+            $size: 120px;
+            width: $size;
+            height: $size;
+            border-radius: $size;
+        }
+
         .item {
             height: 30px;
             border-radius: 30px;
@@ -225,6 +235,11 @@ header {
             color: whites(0.6);
             cursor: pointer;
 
+            @include mobile() {
+                height: fit-content;
+                margin: 4px auto;
+            }
+
             &:hover {
                 background: #000;
                 color: colors(sec);
@@ -232,6 +247,9 @@ header {
 
             &:nth-of-type(2) {
                 margin-left: -5px;
+                @include mobile() {
+                    margin-left: -15px;
+                }
             }
 
             .icon {
@@ -241,6 +259,9 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                @include mobile() {
+                    margin-right: 0;
+                }
             }
 
             p {
@@ -270,88 +291,6 @@ header {
 
         .open {
             display: none;
-        }
-    }
-
-    @include mobile() {
-        .contacts {
-            $size: 70px;
-            width: $size;
-            height: $size;
-            border-radius: $size;
-            transition: all linear 0.2s;
-            color: whites(0.6);
-            padding: 10px;
-            box-shadow: $shadow;
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            font-size: 14px;
-            font-weight: normal;
-            background: colors(bg);
-            box-shadow:
-                -4px -4px 4px rgba(65, 65, 65, 0.15),
-                4px 4px 12px rgba(0, 0, 0, 0.15);
-            border-bottom: 2px solid colors(sec);
-
-            .item {
-                display: none;
-            }
-
-            .close {
-                display: none;
-            }
-
-            .open {
-                display: flex;
-                width: 100%;
-                height: 100%;
-                font-size: 25px;
-                color: whites(0.6);
-            }
-
-            &.active {
-                $size: 160px;
-                width: $size;
-                height: $size;
-                border-radius: $size;
-                padding: 10px;
-                position: absolute;
-                right: 0;
-                top: 20px;
-                font-size: 14px;
-                font-weight: normal;
-
-                .item {
-                    display: flex;
-                    margin: 20px auto;
-                    text-align: center;
-                    width: fit-content;
-                    color: whites(0.6);
-
-                    &:nth-of-type(2) {
-                        margin-left: 10px;
-                    }
-
-                    .icon {
-                        margin-right: 10px;
-                    }
-                }
-
-                .close {
-                    display: block;
-                    color: whites(0.2);
-                    font-size: 24px;
-                    position: absolute;
-                    top: 50%;
-                    right: 20%;
-                    transform: translateY(-50%);
-                }
-
-                .open {
-                    display: none;
-                }
-            }
         }
     }
 }

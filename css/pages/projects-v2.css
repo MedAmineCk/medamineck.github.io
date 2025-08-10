@@ -803,6 +803,11 @@ header .main-container {
   display: flex;
   align-items: center;
 }
+@media (max-width: 1134px) {
+  header .main-container {
+    justify-content: center;
+  }
+}
 header.fixed {
   height: 60px;
   transition: all linear 0.4s;
@@ -968,6 +973,13 @@ header .contacts {
   font-size: 14px;
   font-weight: normal;
 }
+@media (max-width: 1134px) {
+  header .contacts {
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+  }
+}
 header .contacts .item {
   height: 30px;
   border-radius: 30px;
@@ -980,12 +992,24 @@ header .contacts .item {
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
 }
+@media (max-width: 1134px) {
+  header .contacts .item {
+    height: -moz-fit-content;
+    height: fit-content;
+    margin: 4px auto;
+  }
+}
 header .contacts .item:hover {
   background: #000;
   color: #4fffa0;
 }
 header .contacts .item:nth-of-type(2) {
   margin-left: -5px;
+}
+@media (max-width: 1134px) {
+  header .contacts .item:nth-of-type(2) {
+    margin-left: -15px;
+  }
 }
 header .contacts .item .icon {
   width: 30px;
@@ -994,6 +1018,11 @@ header .contacts .item .icon {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 1134px) {
+  header .contacts .item .icon {
+    margin-right: 0;
+  }
 }
 header .contacts .item p {
   margin-right: 10px;
@@ -1018,75 +1047,6 @@ header .contacts .close:hover {
 }
 header .contacts .open {
   display: none;
-}
-@media (max-width: 1134px) {
-  header .contacts {
-    width: 70px;
-    height: 70px;
-    border-radius: 70px;
-    transition: all linear 0.2s;
-    color: rgba(255, 255, 255, 0.6);
-    padding: 10px;
-    box-shadow: -4px -4px 12px rgba(217, 217, 217, 0.05), 4px 4px 12px rgba(0, 0, 0, 0.15);
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 14px;
-    font-weight: normal;
-    background: #26272d;
-    box-shadow: -4px -4px 4px rgba(65, 65, 65, 0.15), 4px 4px 12px rgba(0, 0, 0, 0.15);
-    border-bottom: 2px solid #4fffa0;
-  }
-  header .contacts .item {
-    display: none;
-  }
-  header .contacts .close {
-    display: none;
-  }
-  header .contacts .open {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    font-size: 25px;
-    color: rgba(255, 255, 255, 0.6);
-  }
-  header .contacts.active {
-    width: 160px;
-    height: 160px;
-    border-radius: 160px;
-    padding: 10px;
-    position: absolute;
-    right: 0;
-    top: 20px;
-    font-size: 14px;
-    font-weight: normal;
-  }
-  header .contacts.active .item {
-    display: flex;
-    margin: 20px auto;
-    text-align: center;
-    width: -moz-fit-content;
-    width: fit-content;
-    color: rgba(255, 255, 255, 0.6);
-  }
-  header .contacts.active .item:nth-of-type(2) {
-    margin-left: 10px;
-  }
-  header .contacts.active .item .icon {
-    margin-right: 10px;
-  }
-  header .contacts.active .close {
-    display: block;
-    color: rgba(255, 255, 255, 0.2);
-    font-size: 24px;
-    position: absolute;
-    top: 50%;
-    right: 20%;
-    transform: translateY(-50%);
-  }
-  header .contacts.active .open {
-    display: none;
-  }
 }
 
 /* Footer */

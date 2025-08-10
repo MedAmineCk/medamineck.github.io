@@ -369,6 +369,11 @@ $white: #fff;
                         "Open Sans",
                         "Helvetica Neue",
                         sans-serif;
+
+                    @include mobile() {
+                        top: 50%;
+                        transform: translateY(-50%) rotate(-90deg);
+                    }
                 }
 
                 hr {
