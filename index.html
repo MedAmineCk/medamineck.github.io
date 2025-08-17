@@ -12,10 +12,10 @@
   <meta name="author" content="Med Amine CK">
   <meta property="og:title" content="Med Amine CK | Portfolio">
   <meta property="og:description" content="Full-stack web developer based in Morocco. Check out my work!">
-  <meta property="og:image" content="/preview-image.jpg">
+  <meta property="og:image" content="/preview.png">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://yourdomain.com">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:url" content="https://medamineck.com">
+  <meta name="twitter:card" content="/preview.png">
 
 
   <link rel="manifest" href="/site.webmanifest" />
@@ -27,7 +27,7 @@
 
   <link rel="stylesheet" href="/css/normalize.css" />
 
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="/css/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <meta name="theme-color" content="#0a0a0a" />
@@ -94,14 +94,16 @@
         <div class="item"></div>
       </div>
       <div class="logo">
-        <img src="/img/CK-logo.svg" height="40px" />
+        <a href="#" id="logo-link">
+          <img src="/img/CK-logo.svg" height="40px" />
+        </a>
       </div>
       <nav>
-        <a href="/" class="active">Hi</a>
-        <a href="/pages/about.html">About</a>
-        <a href="/pages/projects.html">Projects</a>
-        <a href="/index.html#testimonial">Testimonial</a>
-        <a href="/index.html#scripts">scripts</a>
+  <a href="#" id="nav-hi" class="active">Hi</a>
+  <a href="/pages/about.html">About</a>
+  <a href="/pages/projects.html">Projects</a>
+  <a href="/index.html#testimonial">Testimonial</a>
+  <a href="/index.html#scripts">scripts</a>
       </nav>
       <div class="contacts">
         <div class="item" onclick="window.open('https://www.linkedin.com/in/medamineck/', '_blank')">
@@ -180,11 +182,12 @@
               </div>
               Download CV
             </a>
-            <a id="contact" href="mailto:contact@medamineck.com">
+            <a id="contact" class="contact-tooltip-anchor" href="mailto:contact@medamineck.com?subject=Contact%20from%20Portfolio&body=Hello%20Med%20Amine%2C%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20with%20you%20regarding...">
               <div class="icon">
                 <i class="far fa-envelope"></i>
               </div>
               GET IN TOUCH NOW
+              <span class="contact-tooltip">contact@medamineck.com</span>
             </a>
           </div>
         </div>
@@ -654,7 +657,7 @@
 
 
     <!-- Projects -->
-    <section class="snippets projects-section">
+    <section id="scripts" class="snippets projects-section">
       <div class="main-container">
         <!-- Section Title -->
         <div class="section-title">
@@ -760,7 +763,7 @@
               <span class="highlight">Figma</span> Projects
             </h1>
             <hr>
-            <a href="figma.com/@medamineck" class="external-link" target="_blank">
+            <a href="https://www.figma.com/@medamineck" class="external-link" target="_blank">
               <i class="fab fa-figma"></i>
               figma.com/@medamineck
             </a>
@@ -839,11 +842,12 @@
               </div>
               Download CV
             </a>
-            <a id="contact" href="mailto:contact@medamineck.com">
+            <a id="contact" class="contact-tooltip-anchor" href="mailto:contact@medamineck.com?subject=Contact%20from%20Portfolio&body=Hello%20Med%20Amine%2C%0D%0A%0D%0AI%20would%20like%20to%20get%20in%20touch%20with%20you%20regarding...">
               <div class="icon">
                 <i class="far fa-envelope"></i>
               </div>
               GET IN TOUCH NOW
+              <span class="contact-tooltip">contact@medamineck.com</span>
             </a>
           </div>
         </div>
@@ -980,6 +984,62 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+    // Scroll to top on logo or Hi link click
+    document.getElementById('logo-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.getElementById('nav-hi').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Highlight nav link based on scroll position
+    window.addEventListener('scroll', function() {
+      var testimonialSection = document.getElementById('testimonial');
+      var scriptsSection = document.querySelector('.projects-section');
+      var navLinks = document.querySelectorAll('nav a');
+      var scrollPos = window.scrollY || window.pageYOffset;
+      var testimonialActive = false;
+      var scriptsActive = false;
+      if (testimonialSection) {
+        var testimonialTop = testimonialSection.offsetTop - 100;
+        var testimonialBottom = testimonialTop + testimonialSection.offsetHeight;
+        if (scrollPos >= testimonialTop && scrollPos < testimonialBottom) {
+          testimonialActive = true;
+        }
+      }
+      if (scriptsSection) {
+        var scriptsTop = scriptsSection.offsetTop - 100;
+        var scriptsBottom = scriptsTop + scriptsSection.offsetHeight;
+        if (scrollPos >= scriptsTop && scrollPos < scriptsBottom) {
+          scriptsActive = true;
+        }
+      }
+      navLinks.forEach(function(link) {
+        link.classList.remove('active');
+      });
+      if (testimonialActive) {
+        navLinks.forEach(function(link) {
+          if (link.getAttribute('href') && link.getAttribute('href').includes('#testimonial')) {
+            link.classList.add('active');
+          }
+        });
+      } else if (scriptsActive) {
+        navLinks.forEach(function(link) {
+          if (link.getAttribute('href') && link.getAttribute('href').includes('#scripts')) {
+            link.classList.add('active');
+          }
+        });
+      } else {
+        // Default to Hi
+        navLinks.forEach(function(link) {
+          if (link.textContent.trim().toLowerCase() === 'hi') {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
   </script>
 
 

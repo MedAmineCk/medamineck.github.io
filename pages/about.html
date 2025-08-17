@@ -3,26 +3,34 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>About me | Med Amine CK</title>
-  <meta name="description" content="" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About me | Med Amine CK</title> 
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="" />
-  <meta property="og:type" content="" />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
+
+  <meta name="description" content="Med Amine CK – Full-stack web developer portfolio. Explore my projects, skills, and contact info.">
+  <meta name="author" content="Med Amine CK">
+  <meta property="og:title" content="Med Amine CK | Portfolio">
+  <meta property="og:description" content="Full-stack web developer based in Morocco. Check out my work!">
+  <meta property="og:image" content="/preview.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://medamineck.com">
+  <meta name="twitter:card" content="/preview.png">
+
 
   <link rel="manifest" href="/site.webmanifest" />
-  <link rel="apple-touch-icon" href="/icon.png" />
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="/css/normalize.css" />
-  <link rel="stylesheet" href="/css/main.css" />
 
   <link rel="stylesheet" href="/css/pages/about.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <meta name="theme-color" content="#fafafa" />
+  <meta name="theme-color" content="#0a0a0a" />
 </head>
 
 <body>
@@ -86,14 +94,16 @@
                 <div class="item"></div>
             </div>
             <div class="logo">
-                <img src="/img/CK-logo.svg" height="40px" />
+                        <a href="/">
+                            <img src="/img/CK-logo.svg" height="40px" />
+                        </a>
             </div>
             <nav>
                 <a href="/">Hi</a>
                 <a href="/pages/about.html" class="active">About</a>
                 <a href="/pages/projects.html">Projects</a>
                 <a href="/index.html#testimonial">Testimonial</a>
-                <a href="/index.html#scripts">scripts</a>
+                    <a href="/index.html#scripts" id="nav-scripts">scripts</a>
             </nav>
             <div class="contacts">
                 <div class="item" onclick="window.open('https://www.linkedin.com/in/medamineck/', '_blank')">
@@ -258,6 +268,7 @@
     <script src="/js/plugins.js"></script>
     <script src="/js/whatsapp.js"></script>
     <script src="/js/index.js"></script>
+
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();

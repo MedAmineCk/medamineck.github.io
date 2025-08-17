@@ -165,3 +165,41 @@ aside {
     }
   }
 }
+
+// Tooltip styles
+.contact-tooltip-anchor {
+  position: relative;
+  display: inline-block;
+
+  .contact-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    min-width: 220px;
+    background: #111;
+    color: #00ffc8;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 14px;
+    position: absolute;
+    left: 50%;
+    top: 110%;
+    transform: translateX(-50%) translateY(10px) scale(0.95);
+    z-index: 10;
+    font-size: 1.05em;
+    pointer-events: none;
+    transition:
+      opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    letter-spacing: 0.07em;
+    text-transform: lowercase;
+  }
+
+  &:hover .contact-tooltip,
+  &:focus .contact-tooltip {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+    pointer-events: auto;
+  }
+}
