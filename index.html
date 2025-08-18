@@ -99,11 +99,11 @@
         </a>
       </div>
       <nav>
-  <a href="#" id="nav-hi" class="active">Hi</a>
-  <a href="/pages/about.html">About</a>
-  <a href="/pages/projects.html">Projects</a>
-  <a href="/index.html#testimonial">Testimonial</a>
+  <a href="/" id="nav-hi" class="active">Hi</a>
+  <a href="#about">About</a>
+  <a href="#works">Projects</a>
   <a href="/index.html#scripts">scripts</a>
+  <a href="/index.html#testimonial">Testimonial</a>
       </nav>
       <div class="contacts">
         <div class="item" onclick="window.open('https://www.linkedin.com/in/medamineck/', '_blank')">
@@ -996,12 +996,30 @@
 
     // Highlight nav link based on scroll position
     window.addEventListener('scroll', function() {
+      var aboutSection = document.getElementById('about');
+      var worksSection = document.getElementById('works');
       var testimonialSection = document.getElementById('testimonial');
       var scriptsSection = document.querySelector('.projects-section');
       var navLinks = document.querySelectorAll('nav a');
       var scrollPos = window.scrollY || window.pageYOffset;
+      var aboutActive = false;
+      var worksActive = false;
       var testimonialActive = false;
       var scriptsActive = false;
+      if (aboutSection) {
+        var aboutTop = aboutSection.offsetTop - 100;
+        var aboutBottom = aboutTop + aboutSection.offsetHeight;
+        if (scrollPos >= aboutTop && scrollPos < aboutBottom) {
+          aboutActive = true;
+        }
+      }
+      if (worksSection) {
+        var worksTop = worksSection.offsetTop - 100;
+        var worksBottom = worksTop + worksSection.offsetHeight;
+        if (scrollPos >= worksTop && scrollPos < worksBottom) {
+          worksActive = true;
+        }
+      }
       if (testimonialSection) {
         var testimonialTop = testimonialSection.offsetTop - 100;
         var testimonialBottom = testimonialTop + testimonialSection.offsetHeight;
@@ -1019,7 +1037,19 @@
       navLinks.forEach(function(link) {
         link.classList.remove('active');
       });
-      if (testimonialActive) {
+      if (aboutActive) {
+        navLinks.forEach(function(link) {
+          if (link.getAttribute('href') && link.getAttribute('href').includes('#about')) {
+            link.classList.add('active');
+          }
+        });
+      } else if (worksActive) {
+        navLinks.forEach(function(link) {
+          if (link.getAttribute('href') && link.getAttribute('href').includes('#works')) {
+            link.classList.add('active');
+          }
+        });
+      } else if (testimonialActive) {
         navLinks.forEach(function(link) {
           if (link.getAttribute('href') && link.getAttribute('href').includes('#testimonial')) {
             link.classList.add('active');
