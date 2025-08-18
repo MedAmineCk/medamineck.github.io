@@ -1843,7 +1843,7 @@ section.about .section-label span {
     gap: 10px;
   }
 }
-.what_i_do .card .flex-container a {
+.what_i_do .card .flex-container .more-projects {
   color: #4fffa0;
   white-space: nowrap;
   text-decoration: none;
@@ -1853,7 +1853,7 @@ section.about .section-label span {
   border-radius: 16px;
 }
 @media (max-width: 1134px) {
-  .what_i_do .card .flex-container a {
+  .what_i_do .card .flex-container .more-projects {
     font-size: 12px;
   }
 }
